@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var searchText = ""
+    
     /*init(){
         UINavigationBar.appearance()
             .setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
@@ -17,15 +19,35 @@ struct ContentView: View {
         UINavigationBar.appearance().barTintColor = .systemGroupedBackground
     }*/
     
+    var searchView: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 25)
+                .fill(Color(.systemGray))
+                .frame(height: 50)
+            HStack{
+                Image(systemName: "magnifyingglass")
+                    .resizable()
+                    .frame(width: 25, height: 25)
+                    .foregroundColor(Color(.systemGray4))
+                TextField("Search themes here", text: $searchText)
+                Image(systemName: "mic")
+                    .resizable()
+                    .frame(width: 25, height: 25)
+                    .foregroundColor(Color(.systemRed))
+            }
+        }
+    }
+    
     var body: some View {
     ScrollView(showsIndicators: false){
-        VStack{
+        VStack(alignment: .leading, spacing: 10){
             Text("Welcome Back Harald")
                 .font(.custom("Avenir-Heavy", size: 30))
             Text("Ready to start your day")
-                .font(.custom("Avenir-Heavy", size: 18))
+                .font(.custom("Avenir-Medium", size: 18))
+                .foregroundColor(Color(.systemGray))
             HStack{
-                Spacer()
+                searchView
             }
         }.padding(24)
     }
