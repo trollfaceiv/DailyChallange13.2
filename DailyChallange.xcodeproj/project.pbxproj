@@ -14,6 +14,8 @@
 		7AA5913C28800E9A0027CB76 /* DailyChallangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5913B28800E9A0027CB76 /* DailyChallangeTests.swift */; };
 		7AA5914628800E9A0027CB76 /* DailyChallangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5914528800E9A0027CB76 /* DailyChallangeUITests.swift */; };
 		7AA5914828800E9A0027CB76 /* DailyChallangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5914728800E9A0027CB76 /* DailyChallangeUITestsLaunchTests.swift */; };
+		F32F29D528807D040036128F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F29D428807D040036128F /* CardView.swift */; };
+		F32F29D728807D3F0036128F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F29D628807D3F0036128F /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		7AA5914128800E9A0027CB76 /* DailyChallangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyChallangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA5914528800E9A0027CB76 /* DailyChallangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallangeUITests.swift; sourceTree = "<group>"; };
 		7AA5914728800E9A0027CB76 /* DailyChallangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F32F29D428807D040036128F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F32F29D628807D3F0036128F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				7AA5912C28800E980027CB76 /* ContentView.swift */,
 				7AA5912E28800E990027CB76 /* Assets.xcassets */,
 				7AA5913028800E990027CB76 /* Preview Content */,
+				F32F29D428807D040036128F /* CardView.swift */,
+				F32F29D628807D3F0036128F /* Card.swift */,
 			);
 			path = DailyChallange;
 			sourceTree = "<group>";
@@ -258,7 +264,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AA5912D28800E980027CB76 /* ContentView.swift in Sources */,
+				F32F29D528807D040036128F /* CardView.swift in Sources */,
 				7AA5912B28800E980027CB76 /* DailyChallangeApp.swift in Sources */,
+				F32F29D728807D3F0036128F /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
