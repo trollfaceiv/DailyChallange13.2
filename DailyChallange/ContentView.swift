@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @State var selectedTab = "flag"
     @State private var searchText = ""
     let inProgressCard: Card = .init(iconName: "moon", title: "The Silent Night Vibes", subtitle: "2/4 Session left", percentageComplete: 75)
     let recommendedCards: [Card] = [
@@ -86,15 +86,19 @@ struct ContentView: View {
             Text("Ready to start your day")
                 .font(.custom("Avenir-Medium", size: 18))
                 .foregroundColor(Color(.systemGray))
-                searchView
+                //searchView
                 inProgressSectionView
                 recommendedSectionView
+            Spacer()
+            Spacer()
+            CustomTabBar(selectedTab: $selectedTab).padding(.vertical, 40)
         }.padding(24)
+            .padding(.vertical, 5)
     }
     .background(Color(.systemGroupedBackground)
         .ignoresSafeArea())
     .navigationBarTitleDisplayMode(.inline)
-    .navigationBarItems(leading: Button{
+    /*.navigationBarItems(leading: Button{
         
     } label: {
         Image(systemName: "list.bullet")
@@ -102,7 +106,7 @@ struct ContentView: View {
         
     } label: {
         Image(systemName: "bell")
-    })
+    })*/
     }
 }
 
