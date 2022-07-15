@@ -18,6 +18,8 @@
 		F32F29D728807D3F0036128F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F29D628807D3F0036128F /* Card.swift */; };
 		F33BD1712881682F00BD207E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33BD1702881682F00BD207E /* CustomTabBar.swift */; };
 		F38DD4F72881BC9500289C43 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DD4F62881BC9500289C43 /* TabCurve.swift */; };
+		F38DD4F92881E6BA00289C43 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DD4F82881E6BA00289C43 /* WelcomeView.swift */; };
+		F38DD4FB2881E8C500289C43 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DD4FA2881E8C500289C43 /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		F32F29D628807D3F0036128F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		F33BD1702881682F00BD207E /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		F38DD4F62881BC9500289C43 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
+		F38DD4F82881E6BA00289C43 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		F38DD4FA2881E8C500289C43 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 				F32F29D628807D3F0036128F /* Card.swift */,
 				F33BD1702881682F00BD207E /* CustomTabBar.swift */,
 				F38DD4F62881BC9500289C43 /* TabCurve.swift */,
+				F38DD4F82881E6BA00289C43 /* WelcomeView.swift */,
+				F38DD4FA2881E8C500289C43 /* SignInView.swift */,
 			);
 			path = DailyChallange;
 			sourceTree = "<group>";
@@ -275,6 +281,8 @@
 				F32F29D528807D040036128F /* CardView.swift in Sources */,
 				7AA5912B28800E980027CB76 /* DailyChallangeApp.swift in Sources */,
 				F32F29D728807D3F0036128F /* Card.swift in Sources */,
+				F38DD4FB2881E8C500289C43 /* SignInView.swift in Sources */,
+				F38DD4F92881E6BA00289C43 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
