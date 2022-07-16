@@ -38,7 +38,7 @@ struct WelcomeView: View {
                     
                     HStack {
                         Text("New around here? ")
-                        Text("Sign in")
+                        Text("Sign up")
                             .foregroundColor(Color(.systemBlue))
                     }
                 }
