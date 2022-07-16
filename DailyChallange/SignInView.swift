@@ -73,6 +73,7 @@ struct SignInView: View {
                 wrongPassword = 2
             }
         }else{
+            
             wrongUsername = 2
         }
     }
