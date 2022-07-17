@@ -11,17 +11,22 @@ struct WelcomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(.systemGray5).edgesIgnoringSafeArea(.all)
+                Color(.systemGray6).edgesIgnoringSafeArea(.all)
                 VStack {
                     Spacer()
                     Image("Gym").resizable()
                         .scaledToFit()
                         .padding(30)
                     Spacer()
-                    PrimaryButton(title: "Get Started")
+                    NavigationLink(
+                        destination: SignUpView().navigationBarHidden(true),
+                        label: {
+                            PrimaryButton(title: "Get Started")
+                        })
+                        .navigationBarHidden(true)
                     
                     NavigationLink(
-                        destination: SignInView().navigationBarHidden(true),
+                        destination: LoginView().navigationBarHidden(true),
                         label: {
                             Text("Sign In")
                                 .font(.title3)
@@ -36,11 +41,7 @@ struct WelcomeView: View {
                         })
                         .navigationBarHidden(true)
                     
-                    HStack {
-                        Text("New around here? ")
-                        Text("Sign up")
-                            .foregroundColor(Color(.systemBlue))
-                    }
+                    
                 }
                 .padding()
             }

@@ -18,6 +18,9 @@ struct CardView: View {
                     .padding(8)
                     .background(RoundedRectangle(cornerRadius: 10).fill(Color(.systemBlue)).opacity(0.1))
                 Spacer()
+                Text("+\(card.points) WP")
+                    .font(.custom("Avenir-Heavy", size: 20))
+                    .foregroundColor(Color(.systemBlue))
             }
             Text(card.title)
                 .font(.custom("Avenir-Heavy", size: 22))
@@ -59,7 +62,7 @@ struct MeditationProgressViewStyle: ProgressViewStyle {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(card: .init(iconName: "moon", title: "The Silent Night Vibes", subtitle: "2/4 Session left", percentageComplete: 75))
+        CardView(card: .init(iconName: "moon", title: "The Silent Night Vibes", subtitle: "2/4 Session left", points: 10, percentageComplete: 75))
             .fixedSize(horizontal: false, vertical: true)
     }
 }

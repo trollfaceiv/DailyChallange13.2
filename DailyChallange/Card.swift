@@ -11,6 +11,7 @@ struct Card: Hashable {
     let iconName: String
     let title: String
     let subtitle: String
+    let points: Int
     let percentageComplete: Double?
     var percentageText: String? {
         guard let percentageComplete = percentageComplete else {

@@ -22,6 +22,7 @@
 		F38DD4F92881E6BA00289C43 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DD4F82881E6BA00289C43 /* WelcomeView.swift */; };
 		F38DD4FB2881E8C500289C43 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DD4FA2881E8C500289C43 /* SignInView.swift */; };
 		F3CD3ACB28830AB40037FF9E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CD3ACA28830AB40037FF9E /* LoginView.swift */; };
+		F3F8CADF28847EB800A89DBC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F8CADE28847EB800A89DBC /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		F38DD4F82881E6BA00289C43 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		F38DD4FA2881E8C500289C43 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F3CD3ACA28830AB40037FF9E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F3F8CADE28847EB800A89DBC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				F38DD4FA2881E8C500289C43 /* SignInView.swift */,
 				09CA2A6B2882D52A0074A9B5 /* SignUpView.swift */,
 				F3CD3ACA28830AB40037FF9E /* LoginView.swift */,
+				F3F8CADE28847EB800A89DBC /* ProfileView.swift */,
 			);
 			path = DailyChallange;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				F38DD4FB2881E8C500289C43 /* SignInView.swift in Sources */,
 				09CA2A6C2882D52A0074A9B5 /* SignUpView.swift in Sources */,
 				F3CD3ACB28830AB40037FF9E /* LoginView.swift in Sources */,
+				F3F8CADF28847EB800A89DBC /* ProfileView.swift in Sources */,
 				F38DD4F92881E6BA00289C43 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

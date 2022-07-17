@@ -21,12 +21,12 @@ struct CustomTabBar: View {
             TabBarButton(image: "person.2", selectedTab: $selectedTab, tabPoints: $tabPoints)
         }
         .padding()
-        .background(Color.white.clipShape(TabCurve(tabPoint: getCurvePoint() - 43)))
+        .background(Color.white.clipShape(TabCurve(tabPoint: getCurvePoint() - 15)))
         .overlay(
             Circle()
                 .fill(Color.white)
                 .frame(width: 10, height: 10)
-                .offset(x: getCurvePoint() - 47)
+                .offset(x: getCurvePoint() - 20)
             ,alignment: .bottomLeading
         )
         .cornerRadius(30)

@@ -10,10 +10,12 @@ import SwiftUI
 struct ContentView: View {
     @State var selectedTab = "flag"
     @State private var searchText = ""
-    let inProgressCard: Card = .init(iconName: "moon", title: "The Silent Night Vibes", subtitle: "2/4 Session left", percentageComplete: 75)
+    @State var isLogged = true
+    
+    let inProgressCard: Card = .init(iconName: "flame", title: "Burn 250 kcal", subtitle: "120/250 kcal burnt", points: 10, percentageComplete: 75)
     let recommendedCards: [Card] = [
-        .init(iconName: "face.smiling", title: "Happiness and Joyful", subtitle: "4 Sessions", percentageComplete: nil),
-        .init(iconName: "heart", title: "Lovely and Vibes", subtitle: "5 Sessions", percentageComplete: nil)
+        .init(iconName: "figure.walk", title: "Run 2 miles ", subtitle: "4 Sessions", points: 5, percentageComplete: nil),
+        .init(iconName: "pawprint", title: "Take 1000 steps", subtitle: "5 Sessions", points: 25, percentageComplete: nil)
     ]
     
     /*init(){
@@ -80,20 +82,50 @@ struct ContentView: View {
     
     var body: some View {
     ScrollView(showsIndicators: false){
-        VStack(alignment: .leading, spacing: 10){
-            Text("Welcome Back Harald")
-                .font(.custom("Avenir-Heavy", size: 30))
-            Text("Ready to start your day")
-                .font(.custom("Avenir-Medium", size: 18))
-                .foregroundColor(Color(.systemGray))
-                //searchView
-                inProgressSectionView
-                recommendedSectionView
-            Spacer()
-            Spacer()
-            CustomTabBar(selectedTab: $selectedTab).padding(.vertical, 40)
-        }.padding(24)
-            .padding(.vertical, 5)
+        ZStack{
+            switch selectedTab {
+            case "flag":
+                
+                VStack(alignment: .leading, spacing: 10){
+                    Text("Welcome Back Harald")
+                        .font(.custom("Avenir-Heavy", size: 30))
+                    Text("Ready to start your day")
+                        .font(.custom("Avenir-Medium", size: 18))
+                        .foregroundColor(Color(.systemGray))
+                    //searchView
+                    inProgressSectionView
+                    recommendedSectionView
+                    Spacer()
+                    Spacer()
+                    
+                
+            
+                }
+                .frame(width: .infinity, height: 600)
+                .padding(.horizontal, 24)
+                .padding(.vertical, 0)
+                
+            case "person":
+                if isLogged {
+                    ProfileView()
+                }
+                else{
+                   WelcomeView()
+                }
+                
+            case "bell":
+                Text("No notification")
+                
+            default:
+                Text("Challenge your friend")
+                
+            }
+            
+        }.frame(width: .infinity, height: 650)
+        
+        VStack{
+        CustomTabBar(selectedTab: $selectedTab).padding(.vertical, 40).frame( maxHeight: .infinity, alignment: .bottom)
+        }.frame(alignment: .bottom)
     }
     .background(Color(.systemGroupedBackground)
         .ignoresSafeArea())
