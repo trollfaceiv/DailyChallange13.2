@@ -9,6 +9,8 @@ import SwiftUI
 import Firebase
 
 struct SignUpView: View {
+    @EnvironmentObject var dataManager: DataManager
+
     @State private var username = ""
     @State private var password = ""
     @State private var confirmPassword = ""
@@ -17,6 +19,7 @@ struct SignUpView: View {
     @State private var showingProfileScreen = false
     @State private var iconUserColor : Color = Color(.systemBlue)
     @State private var iconPasswordColor : Color = Color(.systemBlue)
+    @State private var slider = IntSlider()
     
     var body: some View {
         NavigationView{
@@ -45,7 +48,7 @@ struct SignUpView: View {
                         CustomTextField(image: "lock", placeHolder: "Re-enter", txt: $confirmPassword, bgColor: iconPasswordColor)
                         VStack{
                             Text("Wellness level")
-                        IntSlider().padding(.horizontal).frame(width: 300, height: 50)
+                        slider.padding(.horizontal).frame(width: 300, height: 50)
                         }
                         
                         Button("SIGN UP"){
@@ -80,6 +83,9 @@ struct SignUpView: View {
             else{
                 UsefulValues.isLogged.toggle()
                 showingProfileScreen.toggle()
+                let utente = Utente(id: "1", username: username, livello: slider.score, attivitaSvolte: [])
+                dataManager.addUtente(utente: utente)
+                
             }
         }
         
@@ -88,7 +94,7 @@ struct SignUpView: View {
 }
 
 struct IntSlider: View {
-    @State var score: Int = 0
+    @State var score: Int16 = 0
     var intProxy: Binding<Double>{
         Binding<Double>(get: {
             //returns the score as a Double
@@ -96,7 +102,7 @@ struct IntSlider: View {
         }, set: {
             //rounds the double to an Int
             print($0.description)
-            score = Int($0)
+            score = Int16($0)
         })
     }
     var body: some View {

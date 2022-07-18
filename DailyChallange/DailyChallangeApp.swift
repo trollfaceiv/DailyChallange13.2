@@ -10,13 +10,13 @@ import Firebase
 
 @main
 struct DailyChallangeApp: App {
-    
+    @StateObject var dataManager = DataManager()
     init(){
         FirebaseApp.configure()
     }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(dataManager)
         }
     }
 }

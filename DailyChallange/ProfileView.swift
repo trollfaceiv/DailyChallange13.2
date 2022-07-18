@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var dataManager: DataManager
+    
     var body: some View {
         Home()
     }

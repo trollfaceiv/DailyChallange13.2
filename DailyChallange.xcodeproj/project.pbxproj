@@ -13,6 +13,8 @@
 		09ABF4602885F4F400462F9E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 09ABF45F2885F4F400462F9E /* FirebaseFirestore */; };
 		09ABF4652885F76900462F9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09ABF4642885F76900462F9E /* GoogleService-Info.plist */; };
 		09ABF4672885F85F00462F9E /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ABF4662885F85F00462F9E /* Utility.swift */; };
+		09ABF4692885FC7000462F9E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ABF4682885FC7000462F9E /* DataManager.swift */; };
+		09ABF46B2885FCB700462F9E /* Utente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ABF46A2885FCB700462F9E /* Utente.swift */; };
 		09CA2A6C2882D52A0074A9B5 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CA2A6B2882D52A0074A9B5 /* SignUpView.swift */; };
 		7AA5912B28800E980027CB76 /* DailyChallangeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5912A28800E980027CB76 /* DailyChallangeApp.swift */; };
 		7AA5912D28800E980027CB76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5912C28800E980027CB76 /* ContentView.swift */; };
@@ -84,6 +86,8 @@
 /* Begin PBXFileReference section */
 		09ABF4642885F76900462F9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09ABF4662885F85F00462F9E /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		09ABF4682885FC7000462F9E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		09ABF46A2885FCB700462F9E /* Utente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utente.swift; sourceTree = "<group>"; };
 		09CA2A6B2882D52A0074A9B5 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		7AA5912728800E980027CB76 /* DailyChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA5912A28800E980027CB76 /* DailyChallangeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallangeApp.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 				F3F994962885CA28001D2D59 /* PieChart.swift */,
 				F3F994982885CAA4001D2D59 /* ChallengeData.swift */,
 				09ABF4662885F85F00462F9E /* Utility.swift */,
+				09ABF4682885FC7000462F9E /* DataManager.swift */,
+				09ABF46A2885FCB700462F9E /* Utente.swift */,
 			);
 			path = DailyChallange;
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3F994972885CA28001D2D59 /* PieChart.swift in Sources */,
+				09ABF4692885FC7000462F9E /* DataManager.swift in Sources */,
 				7AA5912D28800E980027CB76 /* ContentView.swift in Sources */,
 				F38DD4F72881BC9500289C43 /* TabCurve.swift in Sources */,
 				F33BD1712881682F00BD207E /* CustomTabBar.swift in Sources */,
@@ -402,6 +409,7 @@
 				09CA2A6C2882D52A0074A9B5 /* SignUpView.swift in Sources */,
 				F3CD3ACB28830AB40037FF9E /* LoginView.swift in Sources */,
 				F3982CF22885679800240987 /* StatsView.swift in Sources */,
+				09ABF46B2885FCB700462F9E /* Utente.swift in Sources */,
 				F3982CF0288553DE00240987 /* CardStore.swift in Sources */,
 				F3F994992885CAA4001D2D59 /* ChallengeData.swift in Sources */,
 				F3F8CADF28847EB800A89DBC /* ProfileView.swift in Sources */,

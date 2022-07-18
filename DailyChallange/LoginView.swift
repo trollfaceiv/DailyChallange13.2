@@ -49,10 +49,6 @@ struct LoginView: View {
                         
                     }
                     
-                    
-                    
-                    
-                    
                     NavigationLink(
                         destination: ProfileView(), isActive: $showingProfileScreen){
                             EmptyView()
