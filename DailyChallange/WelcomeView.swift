@@ -24,6 +24,7 @@ struct WelcomeView: View {
                             PrimaryButton(title: "Get Started")
                         })
                         .navigationBarHidden(true)
+                
                     
                     NavigationLink(
                         destination: LoginView().navigationBarHidden(true),

@@ -28,7 +28,8 @@ struct SignUpView: View {
                     .scale(1.35)
                     .foregroundColor(.white)
                 VStack{
-                    Image("signup").resizable()
+                    Spacer()
+                    Image("sub").resizable()
                         .scaledToFit()
                         .frame(width: 200, height: 200)
                     Text("Sign up")
@@ -57,10 +58,7 @@ struct SignUpView: View {
                         
                     }
                     
-                    
-                    
-                    
-                    
+
                     NavigationLink(
                         destination: Text("You are loggeed in @\(username)"), isActive: $showingLoginScreen){
                             EmptyView()

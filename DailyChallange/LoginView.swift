@@ -46,7 +46,6 @@ struct LoginView: View {
                         .background(Color.blue)
                         .cornerRadius(10)
                         
-                        
                     }
                     
                     

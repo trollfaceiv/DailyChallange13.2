@@ -66,7 +66,6 @@ struct Home : View {
                     .frame(width: 80, height: 3)
                     .zIndex(1)
                     
-                    
                     // going to apply shadows to look like neuromorphic feel...
                     
                     Image(systemName: "person")
