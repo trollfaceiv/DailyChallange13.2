@@ -10,12 +10,20 @@ import SwiftUI
 struct ContentView: View {
     @State var selectedTab = "flag"
     @State private var searchText = ""
-    @State var isLogged = true
+    @State var isLogged = false
+    @State var isDailyStarted = false
     
     let inProgressCard: Card = .init(iconName: "flame", title: "Burn 250 kcal", subtitle: "120/250 kcal burnt", points: 10, percentageComplete: 75)
+    @StateObject var inProgressCards = CardStore()
     let recommendedCards: [Card] = [
         .init(iconName: "figure.walk", title: "Run 2 miles ", subtitle: "4 Sessions", points: 5, percentageComplete: nil),
         .init(iconName: "pawprint", title: "Take 1000 steps", subtitle: "5 Sessions", points: 25, percentageComplete: nil)
+    ]
+    
+    let dailyChallenges: [Card] = [
+        .init(iconName: "figure.walk", title: "Run 4 miles ", subtitle: "2 Sessions", points: 10, percentageComplete: 0),
+        .init(iconName: "pawprint", title: "Take 1000 steps", subtitle: "5 Sessions", points: 25, percentageComplete: 0),
+        .init(iconName: "book", title: "Read 100 pages", subtitle: "2 Sessions", points: 15, percentageComplete: 0)
     ]
     
     /*init(){
@@ -29,23 +37,22 @@ struct ContentView: View {
     var searchView: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
-                .fill(Color(.systemGray5))
+                .fill(Color(.systemBlue))
                 .frame(height: 50)
             HStack{
-                Image(systemName: "magnifyingglass")
-                    .resizable()
-                    .frame(width: 25, height: 25)
-                    .foregroundColor(Color(.systemGray4))
-                    .padding(.horizontal, 20)
-                TextField("Search themes here", text: $searchText)
-                    .font(.custom("Avenir-Med", size: 16))
-                Image(systemName: "mic")
-                    .resizable()
-                    .frame(width: 20, height: 25)
-                    .foregroundColor(Color(.systemRed))
-                    .padding(.horizontal, 20)
+                
+                Button(action: {
+                    let dailyCard = dailyChallenges.randomElement()
+                    inProgressCards.allCards.append(dailyCard!)
+                    isDailyStarted = true
+                }, label: {
+                    Text("Start Daily Challenge")
+                        .foregroundColor(.white)
+                        .font(.custom("Avenir-Heavy", size: 18))
+                })
+                
             }
-        }.padding(.vertical, 50)
+        }.padding(.vertical, 20)
             .padding(.horizontal, 20)
     }
     
@@ -57,7 +64,15 @@ struct ContentView: View {
             Spacer()
         }
         
-        CardView(card: inProgressCard)
+        ScrollView(.horizontal, showsIndicators: false){
+            HStack(spacing: 16) {
+                ForEach(inProgressCards.allCards, id: \.self){
+                    card in
+                    CardView(card: card)
+                        .frame(width: 360)
+                }
+            }
+    }
     }
     
     @ViewBuilder
@@ -74,7 +89,7 @@ struct ContentView: View {
                 ForEach(recommendedCards, id: \.self){
                     card in
                     CardView(card: card)
-                        .frame(width: 200)
+                        .frame(width: 200, height: 300).environmentObject(inProgressCards)
                 }
             }
     }
@@ -92,8 +107,13 @@ struct ContentView: View {
                     Text("Ready to start your day")
                         .font(.custom("Avenir-Medium", size: 18))
                         .foregroundColor(Color(.systemGray))
-                    //searchView
-                    inProgressSectionView
+                    if !isDailyStarted {
+                        searchView
+                    }
+                    
+                    if !inProgressCards.allCards.isEmpty{
+                        inProgressSectionView
+                    }
                     recommendedSectionView
                     Spacer()
                     Spacer()
@@ -141,6 +161,8 @@ struct ContentView: View {
     })*/
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

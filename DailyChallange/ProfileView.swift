@@ -87,12 +87,10 @@ struct Home : View {
                         .font(.title)
                         .foregroundColor(Color.black.opacity(0.8))
                     
-                    Text("iOS Developer")
-                        .foregroundColor(Color.black.opacity(0.7))
+                    Text("Level 4")
+                        .foregroundColor(Color(.systemBlue).opacity(0.7))
                         .padding(.top, 8)
                     
-                    Text("reply.kavsoft@gmail.com")
-                        .foregroundColor(Color.black.opacity(0.7))
                 }
                 .padding(.leading, 20)
                 
@@ -111,7 +109,7 @@ struct Home : View {
                     
                 }) {
                     
-                    Text("Experinces")
+                    Text("Stats")
                         .foregroundColor(self.index == 0 ? Color.blue : .gray)
                         .padding(.vertical, 10)
                         .padding(.horizontal)
@@ -127,7 +125,7 @@ struct Home : View {
                     
                 }) {
                     
-                    Text("Rates")
+                    Text("Charts")
                         .foregroundColor(self.index == 1 ? Color.blue : .gray)
                         .padding(.vertical, 10)
                         .padding(.horizontal)
@@ -143,7 +141,7 @@ struct Home : View {
                     
                 }) {
                     
-                    Text("Charts")
+                    Text("Settings")
                         .foregroundColor(self.index == 2 ? Color.blue : .gray)
                         .padding(.vertical, 10)
                         .padding(.horizontal)
@@ -177,9 +175,7 @@ struct Home : View {
                         .padding(.top,5)
                         .foregroundColor(.white)
                     
-                    Text("Stats")
-                        .foregroundColor(Color(.systemBlue))
-                }
+                }.frame(width: 150, height: 150)
                 .padding(.vertical)
                 // half screen - spacing - two side paddings = 60
                 .frame(width: (UIScreen.main.bounds.width - 60) / 2)
@@ -202,9 +198,8 @@ struct Home : View {
                         .padding(.top,5)
                         .foregroundColor(.white)
                     
-                    Text("UI/UX Designer")
-                        .foregroundColor(Color("Color"))
-                }
+                    
+                }.frame(width: 150, height: 150)
                 .padding(.vertical)
                 // half screen - spacing - two side paddings = 60
                 .frame(width: (UIScreen.main.bounds.width - 60) / 2)
@@ -230,10 +225,9 @@ struct Home : View {
                         .font(.custom("Avenir-Heavy", size: 19))
                         .padding(.top,5)
                         .foregroundColor(.white)
-                    
-                    Text("UI/UX Designer")
-                        .foregroundColor(Color("Color"))
+                
                 }
+                .frame(width: 150, height: 150)
                 .padding(.vertical)
                 // half screen - spacing - two side paddings = 60
                 .frame(width: (UIScreen.main.bounds.width - 60) / 2)
@@ -256,9 +250,9 @@ struct Home : View {
                         .padding(.top,5)
                         .foregroundColor(.white)
                     
-                    Text("UI/UX Designer")
-                        .foregroundColor(Color("Color"))
+                    
                 }
+                .frame(width: 150, height: 150)
                 .padding(.vertical)
                 // half screen - spacing - two side paddings = 60
                 .frame(width: (UIScreen.main.bounds.width - 60) / 2)
