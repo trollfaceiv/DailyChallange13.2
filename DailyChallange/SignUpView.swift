@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SignUpView: View {
     @State private var username = ""
@@ -13,7 +14,7 @@ struct SignUpView: View {
     @State private var confirmPassword = ""
     @State private var wrongUsername = 0
     @State private var wrongPassword = 0
-    @State private var showingLoginScreen = false
+    @State private var showingProfileScreen = false
     @State private var iconUserColor : Color = Color(.systemBlue)
     @State private var iconPasswordColor : Color = Color(.systemBlue)
     
@@ -54,13 +55,10 @@ struct SignUpView: View {
                         .frame(width: 300, height: 50)
                         .background(Color.blue)
                         .cornerRadius(10)
-                        
-                        
                     }
                     
-
                     NavigationLink(
-                        destination: Text("You are loggeed in @\(username)"), isActive: $showingLoginScreen){
+                        destination: ProfileView(), isActive: $showingProfileScreen){
                             EmptyView()
                         }
                     Spacer().frame(width: 400, height: 250)
@@ -73,6 +71,16 @@ struct SignUpView: View {
         iconPasswordColor = Color(.systemBlue)
         if !password.elementsEqual(confirmPassword){
             iconPasswordColor = Color(.systemRed)
+        }
+        Auth.auth().createUser(withEmail: username, password: password){
+            result, error in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            else{
+                UsefulValues.isLogged.toggle()
+                showingProfileScreen.toggle()
+            }
         }
         
         

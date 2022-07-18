@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09ABF45A2885F4F400462F9E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 09ABF4592885F4F400462F9E /* FirebaseAuth */; };
+		09ABF45C2885F4F400462F9E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 09ABF45B2885F4F400462F9E /* FirebaseDatabase */; };
+		09ABF45E2885F4F400462F9E /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 09ABF45D2885F4F400462F9E /* FirebaseDatabaseSwift */; };
+		09ABF4602885F4F400462F9E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 09ABF45F2885F4F400462F9E /* FirebaseFirestore */; };
+		09ABF4652885F76900462F9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09ABF4642885F76900462F9E /* GoogleService-Info.plist */; };
+		09ABF4672885F85F00462F9E /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ABF4662885F85F00462F9E /* Utility.swift */; };
 		09CA2A6C2882D52A0074A9B5 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CA2A6B2882D52A0074A9B5 /* SignUpView.swift */; };
 		7AA5912B28800E980027CB76 /* DailyChallangeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5912A28800E980027CB76 /* DailyChallangeApp.swift */; };
 		7AA5912D28800E980027CB76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5912C28800E980027CB76 /* ContentView.swift */; };
@@ -76,6 +82,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		09ABF4642885F76900462F9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		09ABF4662885F85F00462F9E /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		09CA2A6B2882D52A0074A9B5 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		7AA5912728800E980027CB76 /* DailyChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA5912A28800E980027CB76 /* DailyChallangeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallangeApp.swift; sourceTree = "<group>"; };
@@ -106,7 +114,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09ABF45E2885F4F400462F9E /* FirebaseDatabaseSwift in Frameworks */,
+				09ABF45C2885F4F400462F9E /* FirebaseDatabase in Frameworks */,
 				F3F994932885C9DC001D2D59 /* Charts.framework in Frameworks */,
+				09ABF4602885F4F400462F9E /* FirebaseFirestore in Frameworks */,
+				09ABF45A2885F4F400462F9E /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +166,7 @@
 				7AA5912A28800E980027CB76 /* DailyChallangeApp.swift */,
 				7AA5912C28800E980027CB76 /* ContentView.swift */,
 				7AA5912E28800E990027CB76 /* Assets.xcassets */,
+				09ABF4642885F76900462F9E /* GoogleService-Info.plist */,
 				7AA5913028800E990027CB76 /* Preview Content */,
 				F32F29D428807D040036128F /* CardView.swift */,
 				F32F29D628807D3F0036128F /* Card.swift */,
@@ -168,6 +181,7 @@
 				F3982CF12885679800240987 /* StatsView.swift */,
 				F3F994962885CA28001D2D59 /* PieChart.swift */,
 				F3F994982885CAA4001D2D59 /* ChallengeData.swift */,
+				09ABF4662885F85F00462F9E /* Utility.swift */,
 			);
 			path = DailyChallange;
 			sourceTree = "<group>";
@@ -230,6 +244,12 @@
 			dependencies = (
 			);
 			name = DailyChallange;
+			packageProductDependencies = (
+				09ABF4592885F4F400462F9E /* FirebaseAuth */,
+				09ABF45B2885F4F400462F9E /* FirebaseDatabase */,
+				09ABF45D2885F4F400462F9E /* FirebaseDatabaseSwift */,
+				09ABF45F2885F4F400462F9E /* FirebaseFirestore */,
+			);
 			productName = DailyChallange;
 			productReference = 7AA5912728800E980027CB76 /* DailyChallange.app */;
 			productType = "com.apple.product-type.application";
@@ -302,6 +322,9 @@
 				Base,
 			);
 			mainGroup = 7AA5911E28800E980027CB76;
+			packageReferences = (
+				09ABF4582885F4F400462F9E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 7AA5912828800E980027CB76 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -343,6 +366,7 @@
 			files = (
 				7AA5913228800E990027CB76 /* Preview Assets.xcassets in Resources */,
 				7AA5912F28800E990027CB76 /* Assets.xcassets in Resources */,
+				09ABF4652885F76900462F9E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +396,7 @@
 				F38DD4F72881BC9500289C43 /* TabCurve.swift in Sources */,
 				F33BD1712881682F00BD207E /* CustomTabBar.swift in Sources */,
 				F32F29D528807D040036128F /* CardView.swift in Sources */,
+				09ABF4672885F85F00462F9E /* Utility.swift in Sources */,
 				7AA5912B28800E980027CB76 /* DailyChallangeApp.swift in Sources */,
 				F32F29D728807D3F0036128F /* Card.swift in Sources */,
 				09CA2A6C2882D52A0074A9B5 /* SignUpView.swift in Sources */,
@@ -539,7 +564,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyChallange/Preview Content\"";
-				DEVELOPMENT_TEAM = JY2S6M6YP3;
+				DEVELOPMENT_TEAM = K466ZB546R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -568,7 +593,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyChallange/Preview Content\"";
-				DEVELOPMENT_TEAM = JY2S6M6YP3;
+				DEVELOPMENT_TEAM = K466ZB546R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -705,6 +730,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		09ABF4582885F4F400462F9E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		09ABF4592885F4F400462F9E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09ABF4582885F4F400462F9E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		09ABF45B2885F4F400462F9E /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09ABF4582885F4F400462F9E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		09ABF45D2885F4F400462F9E /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09ABF4582885F4F400462F9E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		09ABF45F2885F4F400462F9E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09ABF4582885F4F400462F9E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7AA5911F28800E980027CB76 /* Project object */;
 }
