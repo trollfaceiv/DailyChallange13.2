@@ -58,10 +58,7 @@ struct SignUpView: View {
                         
                     }
                     
-                    
-                    
-                    
-                    
+
                     NavigationLink(
                         destination: Text("You are loggeed in @\(username)"), isActive: $showingLoginScreen){
                             EmptyView()

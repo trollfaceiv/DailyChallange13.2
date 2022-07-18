@@ -63,6 +63,7 @@ struct SignInView: View {
         }
         .navigationBarHidden(true)
     }
+    
     func authenticateUser(username: String, password: String){
         if username.lowercased() == "mario2021"{
             wrongUsername = 0
