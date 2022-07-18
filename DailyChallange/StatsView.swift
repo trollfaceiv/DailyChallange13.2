@@ -1,20 +1,31 @@
 //
 //  StatsView.swift
-//  DailyChallange
+//  MyGroceryListJuly
 //
 //  Created by Daniele Donia on 18/07/22.
 //
 
 import SwiftUI
+import Charts
 
 struct StatsView: View {
+    @State private var pieChartEntries: [PieChartDataEntry] = []
+    @State var category: ChallengeData.Category
+    @State var total: Int
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            PieChart(total:total, entries: ChallengeData.entriesForChallenges(ChallengeData.allChallenges,
+                                                   category: category),
+                     category: $category)
+            .frame(height: 400)
+            
+        }
+        .padding(.horizontal)
     }
 }
 
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
-        StatsView()
+        StatsView(category: ChallengeData.Category.speed, total: 100)
     }
 }

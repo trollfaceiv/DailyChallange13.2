@@ -23,37 +23,23 @@ struct Home : View {
     
     @State var index = 0
     
+    //da sostituire con il totale delle sfide per ogni categoria
+    @State private var totalChallenges = 100
+    
+    
     var body: some View{
-        
+        NavigationView{
         VStack{
             
             HStack(spacing: 15){
                 
-                Button(action: {
-                    
-                }) {
-                    
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 22))
-                        .foregroundColor(.black)
-                }
-                
+                Spacer()
                 Text("Profile")
-                    .font(.title)
+                    .font(.custom("Avenir-Heavy", size: 30))
                 
                 Spacer(minLength: 0)
                 
-                Button(action: {
-                    
-                }) {
-                    
-                    Text("Add")
-                        .foregroundColor(.white)
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 25)
-                        .background(Color("Color"))
-                        .cornerRadius(10)
-                }
+                
             }
             .padding()
             
@@ -83,12 +69,13 @@ struct Home : View {
                 VStack(alignment: .leading, spacing: 12){
                     
                     Text("Kavuya")
-                        .font(.title)
+                        .font(.custom("Avenir-Medium", size: 25))
                         .foregroundColor(Color.black.opacity(0.8))
                     
                     Text("Level 4")
+                        .font(.custom("Avenir-Heavy", size: 20))
                         .foregroundColor(Color(.systemBlue).opacity(0.7))
-                        .padding(.top, 8)
+                        .padding(.top, 2)
                     
                 }
                 .padding(.leading, 20)
@@ -112,7 +99,7 @@ struct Home : View {
                         .foregroundColor(self.index == 0 ? Color.blue : .gray)
                         .padding(.vertical, 10)
                         .padding(.horizontal)
-                        .background(self.index == 0 ? Color("Color") : Color.clear)
+                        .background(self.index == 0 ? Color(.systemGray5) : Color.clear)
                         .cornerRadius(10)
                 }
                 
@@ -128,7 +115,7 @@ struct Home : View {
                         .foregroundColor(self.index == 1 ? Color.blue : .gray)
                         .padding(.vertical, 10)
                         .padding(.horizontal)
-                        .background(self.index == 1 ? Color("Color") : Color.clear)
+                        .background(self.index == 1 ? Color(.systemGray5) : Color.clear)
                         .cornerRadius(10)
                 }
                 
@@ -144,13 +131,13 @@ struct Home : View {
                         .foregroundColor(self.index == 2 ? Color.blue : .gray)
                         .padding(.vertical, 10)
                         .padding(.horizontal)
-                        .background(self.index == 2 ? Color("Color") : Color.clear)
+                        .background(self.index == 2 ? Color(.systemGray5) : Color.clear)
                         .cornerRadius(10)
                 }
             }
             .padding(.horizontal,8)
             .padding(.vertical,5)
-            .background(Color("Color1"))
+            .background(Color(.systemGray5))
             .cornerRadius(8)
             .shadow(color: Color.black.opacity(0.1), radius: 5, x: 8, y: 8)
             .shadow(color: Color.white.opacity(0.5), radius: 5, x: -8, y: -8)
@@ -159,31 +146,34 @@ struct Home : View {
             
             // Cards...
             
+            if self.index == 0 {
+            
             HStack(spacing: 20){
-                
-                VStack(spacing: 12){
-                    
-                    Image(systemName: "flame")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 70, height: 70)
-                    .foregroundColor(.white)
-                    
-                    Text("Burning calories")
-                        .font(.custom("Avenir-Heavy", size: 19))
-                        .padding(.top,5)
+                NavigationLink(destination: StatsView(category:ChallengeData.Category.calories, total:totalChallenges)) {
+                    VStack(spacing: 12){
+                        Image(systemName: "flame")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 70, height: 70)
                         .foregroundColor(.white)
-                    
-                }.frame(width: 150, height: 150)
-                .padding(.vertical)
-                // half screen - spacing - two side paddings = 60
-                .frame(width: (UIScreen.main.bounds.width - 60) / 2)
-                .background(Color(.systemBlue))
-                .cornerRadius(15)
-                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 8, y: 8)
-                .shadow(color: Color.white.opacity(0.5), radius: 5, x: -8, y: -8)
-                // shadows...
+                        
+                        Text("Burning calories")
+                            .font(.custom("Avenir-Heavy", size: 19))
+                            .padding(.top,5)
+                            .foregroundColor(.white)
+                        
+                    }.frame(width: 150, height: 150)
+                    .padding(.vertical)
+                    // half screen - spacing - two side paddings = 60
+                    .frame(width: (UIScreen.main.bounds.width - 60) / 2)
+                    .background(Color(.systemBlue))
+                    .cornerRadius(15)
+                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 8, y: 8)
+                    .shadow(color: Color.white.opacity(0.5), radius: 5, x: -8, y: -8)
+                }
                 
+                // shadows...
+                NavigationLink(destination: StatsView(category:ChallengeData.Category.miles, total:totalChallenges)) {
                 VStack(spacing: 12){
                     
                     Image(systemName: "figure.walk")
@@ -206,12 +196,13 @@ struct Home : View {
                 .shadow(color: Color.black.opacity(0.1), radius: 5, x: 8, y: 8)
                 .shadow(color: Color.white.opacity(0.5), radius: 5, x: -8, y: -8)
                 // shadows...
+                }
                 
             }
             .padding(.top,20)
             
             HStack(spacing: 20){
-                
+                NavigationLink(destination: StatsView(category:ChallengeData.Category.steps, total: totalChallenges)) {
                 VStack(spacing: 12){
                     
                     Image(systemName: "pawprint")
@@ -234,8 +225,10 @@ struct Home : View {
                 .cornerRadius(15)
                 .shadow(color: Color.black.opacity(0.1), radius: 5, x: 8, y: 8)
                 .shadow(color: Color.white.opacity(0.5), radius: 5, x: -8, y: -8)
+                }
                 // shadows...
                 
+                NavigationLink(destination: StatsView(category:ChallengeData.Category.speed, total:totalChallenges)) {
                 VStack(spacing: 12){
                     
                     Image(systemName: "bolt")
@@ -260,12 +253,19 @@ struct Home : View {
                 .shadow(color: Color.black.opacity(0.1), radius: 5, x: 8, y: 8)
                 .shadow(color: Color.white.opacity(0.5), radius: 5, x: -8, y: -8)
                 // shadows...
+                }
                 
             }
             .padding(.top,20)
             
+        }
+            
             Spacer(minLength: 0)
         }
         .background(Color("Color1").edgesIgnoringSafeArea(.all))
+        .navigationBarHidden(true)
+        
+        }.statusBar(hidden: true)
+            .padding(.vertical, 40)
     }
 }
