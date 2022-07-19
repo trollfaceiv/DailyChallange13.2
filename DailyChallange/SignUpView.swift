@@ -79,6 +79,8 @@ struct SignUpView: View {
             result, error in
             if error != nil {
                 print(error!.localizedDescription)
+                iconUserColor = Color(.systemRed)
+                iconPasswordColor = Color(.systemRed)
             }
             else{
                 UsefulValues.isLogged.toggle()

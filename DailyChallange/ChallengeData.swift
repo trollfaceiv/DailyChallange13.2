@@ -14,6 +14,7 @@ struct ChallengeData {
     }
     var category: Category
     var value:Double
+    var valueProgress:Double
     var label:String
     
     static func entriesForChallenges(_ wines: [ChallengeData], category: Category) -> [PieChartDataEntry] {
@@ -22,14 +23,14 @@ struct ChallengeData {
     }
     static var allChallenges:[ChallengeData] {
         [
-            ChallengeData(category: .calories, value: 20, label: "Won"),
-            ChallengeData(category: .calories, value: 2, label: "Failed"),
-            ChallengeData(category: .steps, value: 5, label: "Won"),
-            ChallengeData(category: .steps, value: 7, label: "Failed"),
-            ChallengeData(category: .miles, value: 12, label: "Won"),
-            ChallengeData(category: .miles, value: 10, label: "Failed"),
-            ChallengeData(category: .speed, value: 3, label: "Won"),
-            ChallengeData(category: .speed, value: 6, label: "Failed")
+            ChallengeData(category: .calories, value: 20, valueProgress: 0, label: "Won"),
+            ChallengeData(category: .calories, value: 2, valueProgress: 0, label: "Failed"),
+            ChallengeData(category: .steps, value: 5, valueProgress: 0, label: "Won"),
+            ChallengeData(category: .steps, value: 7, valueProgress: 0, label: "Failed"),
+            ChallengeData(category: .miles, value: 12, valueProgress: 0, label: "Won"),
+            ChallengeData(category: .miles, value: 10, valueProgress: 0, label: "Failed"),
+            ChallengeData(category: .speed, value: 3, valueProgress: 0, label: "Won"),
+            ChallengeData(category: .speed, value: 6, valueProgress: 0, label: "Failed")
         ]
     }
 }

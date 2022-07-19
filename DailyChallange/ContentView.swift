@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @State var selectedTab = "flag"
     @State private var searchText = ""
-    @State var isLogged = false
     @State var isDailyStarted = false
     
     let inProgressCard: Card = .init(iconName: "flame", title: "Burn 250 kcal", subtitle: "120/250 kcal burnt", points: 10, percentageComplete: 75)
@@ -126,7 +125,7 @@ struct ContentView: View {
                 .padding(.vertical, 0)
                 
             case "person":
-                if isLogged {
+                if UsefulValues.isLogged {
                     ProfileView()
                 }
                 else{

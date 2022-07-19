@@ -4,12 +4,11 @@
 //
 //  Created by Daniele Donia on 18/07/22.
 //
-
 import SwiftUI
 import Charts
 
 struct PieChart: UIViewRepresentable {
-    
+
     var total: Int
     var entries: [PieChartDataEntry]
     @Binding var category: ChallengeData.Category
@@ -30,7 +29,7 @@ struct PieChart: UIViewRepresentable {
         formatDataSet(dataSet)
         uiView.notifyDataSetChanged()
     }
-    
+
     class Coordinator: NSObject, ChartViewDelegate {
         var parent: PieChart
         init(parent: PieChart) {
@@ -45,33 +44,33 @@ struct PieChart: UIViewRepresentable {
                 """
         }
     }
-    
+
     func makeCoordinator() -> Coordinator {
         Coordinator(parent: self)
     }
-    
+
     func configureChart( _ pieChart: PieChartView) {
         pieChart.rotationEnabled = false
         pieChart.animate(xAxisDuration: 0.5, easingOption: .easeInOutCirc)
         pieChart.drawEntryLabelsEnabled = false
         pieChart.highlightValue(x: -1, dataSetIndex: 0, callDelegate: false)
     }
-    
+
     func formatCenter(_ pieChart: PieChartView) {
         pieChart.holeColor = UIColor.systemBackground
         pieChart.centerText = "\(total) challenges"
         pieChart.centerTextRadiusPercent = 0.95
     }
-    
+
     func formatDescription( _ description: Description) {
         description.text = category.rawValue.capitalized
         description.font = UIFont.boldSystemFont(ofSize: 17)
     }
-    
+
     func formatLegend(_ legend: Legend) {
         legend.enabled = false
     }
-    
+
     func formatDataSet(_ dataSet: ChartDataSet) {
         dataSet.drawValuesEnabled = false
     }
