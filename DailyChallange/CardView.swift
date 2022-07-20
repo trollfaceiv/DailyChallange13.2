@@ -4,11 +4,21 @@
 //
 //  Created by Daniele Donia on 14/07/22.
 //
+//
+//  CardView.swift
+//  DailyChallange
+//
+//  Created by Daniele Donia on 14/07/22.
+//
 
 import SwiftUI
 
 struct CardView: View {
-    @EnvironmentObject var inProgressCards: CardStore
+    @EnvironmentObject var cards: CardStore
+    @Binding var isDailyStarted: Bool
+    @EnvironmentObject var dataManager: DataManager
+    @State private var wellness = User.Wellness()
+    
     let card: Card
     var body: some View {
         ZStack{
@@ -25,8 +35,10 @@ struct CardView: View {
             }
             Text(card.title)
                 .font(.custom("Avenir-Heavy", size: 22))
-            Text(card.subtitle)
-                .modifier(CardDetailTextStyle())
+            if(card.achievement != -1){
+                Text(card.subtitle)
+                    .modifier(CardDetailTextStyle())
+            }
             if let percentageText = card.percentageText {
                 HStack{
                     Text(percentageText)
@@ -39,9 +51,41 @@ struct CardView: View {
                 HStack{
                     Spacer()
                     Button(action: {
-                        let newCard : Card = .init(iconName: card.iconName, title: card.title, subtitle: card.subtitle, points: card.points, percentageComplete: 0)
+                        if wellness.utente.isLogged {
+                        let newCard : Card = .init(id: card.id, goal: card.goal, achievement: 0, category: card.category, points: card.points)
+                        print("prima")
+                        cards.inProgressCards.append(newCard)
+                            print("dentro")
+                        dataManager.addAttivita(challenge: ChallengeData.allChallenges[1])
+                            print("database")
+                        wellness.utente.attivitaSvolte.append(ChallengeData.allChallenges[1])
+                            print("\(wellness.utente.username)")
+                        dataManager.updateUtente(utente:wellness.utente)
+                            
+                        wellness.save()
+                        for i in 0..<cards.availableCards.count{
+                            if cards.availableCards[i].id == newCard.id {
+                                cards.availableCards.remove(at: i)
+                                break
+                            }
+                        }
                         
-                        inProgressCards.allCards.append(newCard)
+                        cards.availableCards = cards.availableCards.filter(){
+                            $0.category != newCard.category
+                        }
+                        
+                        
+                        if !isDailyStarted {
+                            cards.dailyChallengeCards = cards.dailyChallengeCards.filter(){
+                                $0.category != newCard.category
+                            }
+                        }
+                        }
+                        else{
+                            
+                        }
+                        
+                        
                         
                     }) {
                         Image(systemName: "plus")
@@ -80,13 +124,6 @@ struct MeditationProgressViewStyle: ProgressViewStyle {
                 .scaleEffect(x: 1, y: 2.5)
             
         }
-    }
-}
-
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView(card: .init(iconName: "moon", title: "The Silent Night Vibes", subtitle: "2/4 Session left", points: 10, percentageComplete: nil))
-            .fixedSize(horizontal: false, vertical: true)
     }
 }
 

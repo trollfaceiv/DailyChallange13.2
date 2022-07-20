@@ -20,6 +20,7 @@ struct SignUpView: View {
     @State private var iconUserColor : Color = Color(.systemBlue)
     @State private var iconPasswordColor : Color = Color(.systemBlue)
     @State private var slider = IntSlider()
+    @State private var wellness = User.Wellness()
     
     var body: some View {
         NavigationView{
@@ -83,20 +84,23 @@ struct SignUpView: View {
                 iconPasswordColor = Color(.systemRed)
             }
             else{
-                UsefulValues.isLogged.toggle()
                 showingProfileScreen.toggle()
-                let utente = Utente(id: "1", username: username, livello: slider.score, attivitaSvolte: [])
-                dataManager.addUtente(utente: utente)
-                
+                wellness.utente.id = username
+                wellness.utente.username = username
+                print("\(slider.score) ueeeee")
+                wellness.utente.livello = UsefulValues.livello
+                wellness.utente.attivitaSvolte = []
+                wellness.utente.isLogged = true
+                dataManager.addUtente(utente:wellness.utente)
+                wellness.save()
+                showingProfileScreen=true
             }
         }
-        
-        
     }
 }
 
 struct IntSlider: View {
-    @State var score: Int16 = 0
+    @State var score: Int = 0
     var intProxy: Binding<Double>{
         Binding<Double>(get: {
             //returns the score as a Double
@@ -104,7 +108,7 @@ struct IntSlider: View {
         }, set: {
             //rounds the double to an Int
             print($0.description)
-            score = Int16($0)
+            score = Int($0)
         })
     }
     var body: some View {
@@ -112,6 +116,7 @@ struct IntSlider: View {
             Text(score.description)
             Slider(value: intProxy , in: 0.0...5.0, step: 1.0, onEditingChanged: {_ in
                 print(score.description)
+                UsefulValues.livello=score
             })
         }
     }

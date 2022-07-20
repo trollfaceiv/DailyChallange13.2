@@ -8,5 +8,5 @@
 import Foundation
 
 struct UsefulValues{
-    static var isLogged = false
+    static var livello = 0
 }

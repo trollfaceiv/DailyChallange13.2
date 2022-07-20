@@ -16,7 +16,7 @@ struct DailyChallangeApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(dataManager)
+            ContentView()
         }
     }
 }

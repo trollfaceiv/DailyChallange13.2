@@ -9,13 +9,14 @@ import SwiftUI
 import Firebase
 
 struct LoginView: View {
+    @EnvironmentObject var dataManager: DataManager
     @State private var username = ""
     @State private var password = ""
     @State private var wrongUsername = 0
     @State private var wrongPassword = 0
     @State private var showingProfileScreen = false
     @State private var iconColor : Color = Color(.systemBlue)
-    
+    @State private var wellness = User.Wellness()
     var body: some View {
         NavigationView{
             ZStack{
@@ -83,12 +84,16 @@ struct LoginView: View {
                 print(error!.localizedDescription)
                 iconColor = Color(.systemRed)
             }else{
-                UsefulValues.isLogged.toggle()
-                showingProfileScreen.toggle()
+                for utente in dataManager.utenti{
+                        if(utente.username==username){
+                            wellness.utente = utente
+                            wellness.utente.isLogged = true
+                            wellness.save()
+                            showingProfileScreen.toggle()
+                        }
+                }
             }
-        }
-        
-       
+        }  
     }
 }
 

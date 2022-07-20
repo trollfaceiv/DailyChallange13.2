@@ -14,29 +14,46 @@
 		09ABF4652885F76900462F9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09ABF4642885F76900462F9E /* GoogleService-Info.plist */; };
 		09ABF4672885F85F00462F9E /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ABF4662885F85F00462F9E /* Utility.swift */; };
 		09ABF4692885FC7000462F9E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ABF4682885FC7000462F9E /* DataManager.swift */; };
-		09ABF46B2885FCB700462F9E /* Utente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ABF46A2885FCB700462F9E /* Utente.swift */; };
+		09B307B72887F4CF00976C40 /* CardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B307B62887F4CF00976C40 /* CardStore.swift */; };
+		09B307B92887F4E000976C40 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B307B82887F4DF00976C40 /* Card.swift */; };
+		09B307BB2887F56100976C40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B307BA2887F56100976C40 /* ContentView.swift */; };
+		09B307BE2888032700976C40 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B307BD2888032700976C40 /* HealthKit.framework */; };
+		09B307C42888050700976C40 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B307C32888050700976C40 /* Step.swift */; };
+		09B307C62888055B00976C40 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B307C52888055B00976C40 /* HealthStore.swift */; };
 		09C0C62B288699990054F23D /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C0C628288699330054F23D /* Charts.framework */; platformFilter = ios; };
 		09C0C62C288699990054F23D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09C0C628288699330054F23D /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		09C0C62E2886C5250054F23D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0C62D2886C5240054F23D /* User.swift */; };
 		09CA2A6C2882D52A0074A9B5 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CA2A6B2882D52A0074A9B5 /* SignUpView.swift */; };
 		7AA5912B28800E980027CB76 /* DailyChallangeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5912A28800E980027CB76 /* DailyChallangeApp.swift */; };
-		7AA5912D28800E980027CB76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5912C28800E980027CB76 /* ContentView.swift */; };
 		7AA5912F28800E990027CB76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA5912E28800E990027CB76 /* Assets.xcassets */; };
 		7AA5913228800E990027CB76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA5913128800E990027CB76 /* Preview Assets.xcassets */; };
 		7AA5913C28800E9A0027CB76 /* DailyChallangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5913B28800E9A0027CB76 /* DailyChallangeTests.swift */; };
 		7AA5914628800E9A0027CB76 /* DailyChallangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5914528800E9A0027CB76 /* DailyChallangeUITests.swift */; };
 		7AA5914828800E9A0027CB76 /* DailyChallangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5914728800E9A0027CB76 /* DailyChallangeUITestsLaunchTests.swift */; };
 		F32F29D528807D040036128F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F29D428807D040036128F /* CardView.swift */; };
-		F32F29D728807D3F0036128F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F29D628807D3F0036128F /* Card.swift */; };
 		F33BD1712881682F00BD207E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33BD1702881682F00BD207E /* CustomTabBar.swift */; };
 		F38DD4F72881BC9500289C43 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DD4F62881BC9500289C43 /* TabCurve.swift */; };
 		F38DD4F92881E6BA00289C43 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DD4F82881E6BA00289C43 /* WelcomeView.swift */; };
-		F3982CF0288553DE00240987 /* CardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3982CEF288553DE00240987 /* CardStore.swift */; };
 		F3982CF22885679800240987 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3982CF12885679800240987 /* StatsView.swift */; };
 		F3CD3ACB28830AB40037FF9E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CD3ACA28830AB40037FF9E /* LoginView.swift */; };
 		F3F8CADF28847EB800A89DBC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F8CADE28847EB800A89DBC /* ProfileView.swift */; };
 		F3F994972885CA28001D2D59 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F994962885CA28001D2D59 /* PieChart.swift */; };
 		F3F994992885CAA4001D2D59 /* ChallengeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F994982885CAA4001D2D59 /* ChallengeData.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		09B307AD2887EE9800976C40 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		09C0C627288699330054F23D /* PBXContainerItemProxy */ = {
@@ -87,12 +104,19 @@
 		09ABF4642885F76900462F9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09ABF4662885F85F00462F9E /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		09ABF4682885FC7000462F9E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		09ABF46A2885FCB700462F9E /* Utente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utente.swift; sourceTree = "<group>"; };
+		09B307B62887F4CF00976C40 /* CardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStore.swift; sourceTree = "<group>"; };
+		09B307B82887F4DF00976C40 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		09B307BA2887F56100976C40 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../../../Downloads/ContentView.swift; sourceTree = "<group>"; };
+		09B307BC2888032700976C40 /* DailyChallange.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyChallange.entitlements; sourceTree = "<group>"; };
+		09B307BD2888032700976C40 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		09B307C32888050700976C40 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Step.swift; path = ../../../Step.swift; sourceTree = "<group>"; };
+		09B307C52888055B00976C40 /* HealthStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthStore.swift; path = ../../HealthStore.swift; sourceTree = "<group>"; };
+		09B307C7288807B500976C40 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09C0C622288699330054F23D /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../Charts-master-4 2/Charts.xcodeproj"; sourceTree = "<group>"; };
+		09C0C62D2886C5240054F23D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09CA2A6B2882D52A0074A9B5 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		7AA5912728800E980027CB76 /* DailyChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA5912A28800E980027CB76 /* DailyChallangeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallangeApp.swift; sourceTree = "<group>"; };
-		7AA5912C28800E980027CB76 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7AA5912E28800E990027CB76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AA5913128800E990027CB76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AA5913728800E990027CB76 /* DailyChallangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyChallangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,11 +125,9 @@
 		7AA5914528800E9A0027CB76 /* DailyChallangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallangeUITests.swift; sourceTree = "<group>"; };
 		7AA5914728800E9A0027CB76 /* DailyChallangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F32F29D428807D040036128F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		F32F29D628807D3F0036128F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		F33BD1702881682F00BD207E /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		F38DD4F62881BC9500289C43 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
 		F38DD4F82881E6BA00289C43 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		F3982CEF288553DE00240987 /* CardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStore.swift; sourceTree = "<group>"; };
 		F3982CF12885679800240987 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		F3CD3ACA28830AB40037FF9E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F3F8CADE28847EB800A89DBC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -121,6 +143,7 @@
 				09ABF45E2885F4F400462F9E /* FirebaseDatabaseSwift in Frameworks */,
 				09ABF45C2885F4F400462F9E /* FirebaseDatabase in Frameworks */,
 				09C0C62B288699990054F23D /* Charts.framework in Frameworks */,
+				09B307BE2888032700976C40 /* HealthKit.framework in Frameworks */,
 				09ABF4602885F4F400462F9E /* FirebaseFirestore in Frameworks */,
 				09ABF45A2885F4F400462F9E /* FirebaseAuth in Frameworks */,
 			);
@@ -143,6 +166,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09B307BF288804CB00976C40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09B307C32888050700976C40 /* Step.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		09B307C0288804E500976C40 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				09B307C7288807B500976C40 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 		09C0C623288699330054F23D /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,13 +215,18 @@
 		7AA5912928800E980027CB76 /* DailyChallange */ = {
 			isa = PBXGroup;
 			children = (
+				09B307C52888055B00976C40 /* HealthStore.swift */,
+				09B307C0288804E500976C40 /* iOS */,
+				09B307BF288804CB00976C40 /* Model */,
+				09B307BC2888032700976C40 /* DailyChallange.entitlements */,
 				7AA5912A28800E980027CB76 /* DailyChallangeApp.swift */,
-				7AA5912C28800E980027CB76 /* ContentView.swift */,
+				09B307BA2887F56100976C40 /* ContentView.swift */,
 				7AA5912E28800E990027CB76 /* Assets.xcassets */,
 				09ABF4642885F76900462F9E /* GoogleService-Info.plist */,
 				7AA5913028800E990027CB76 /* Preview Content */,
 				F32F29D428807D040036128F /* CardView.swift */,
-				F32F29D628807D3F0036128F /* Card.swift */,
+				09B307B82887F4DF00976C40 /* Card.swift */,
+				09B307B62887F4CF00976C40 /* CardStore.swift */,
 				F33BD1702881682F00BD207E /* CustomTabBar.swift */,
 				F38DD4F62881BC9500289C43 /* TabCurve.swift */,
 				F38DD4F82881E6BA00289C43 /* WelcomeView.swift */,
@@ -190,13 +234,12 @@
 				F3CD3ACA28830AB40037FF9E /* LoginView.swift */,
 				F3F8CADE28847EB800A89DBC /* ProfileView.swift */,
 				09C0C622288699330054F23D /* Charts.xcodeproj */,
-				F3982CEF288553DE00240987 /* CardStore.swift */,
 				F3982CF12885679800240987 /* StatsView.swift */,
 				F3F994962885CA28001D2D59 /* PieChart.swift */,
 				F3F994982885CAA4001D2D59 /* ChallengeData.swift */,
 				09ABF4662885F85F00462F9E /* Utility.swift */,
 				09ABF4682885FC7000462F9E /* DataManager.swift */,
-				09ABF46A2885FCB700462F9E /* Utente.swift */,
+				09C0C62D2886C5240054F23D /* User.swift */,
 			);
 			path = DailyChallange;
 			sourceTree = "<group>";
@@ -229,6 +272,7 @@
 		F3F994922885C9DC001D2D59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09B307BD2888032700976C40 /* HealthKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -246,6 +290,7 @@
 				F3F994952885C9DC001D2D59 /* Embed Frameworks */,
 			);
 			buildRules = (
+				09B307AD2887EE9800976C40 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -398,19 +443,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3F994972885CA28001D2D59 /* PieChart.swift in Sources */,
+				09B307B92887F4E000976C40 /* Card.swift in Sources */,
 				09ABF4692885FC7000462F9E /* DataManager.swift in Sources */,
-				7AA5912D28800E980027CB76 /* ContentView.swift in Sources */,
 				F38DD4F72881BC9500289C43 /* TabCurve.swift in Sources */,
+				09B307C62888055B00976C40 /* HealthStore.swift in Sources */,
 				F33BD1712881682F00BD207E /* CustomTabBar.swift in Sources */,
 				F32F29D528807D040036128F /* CardView.swift in Sources */,
 				09ABF4672885F85F00462F9E /* Utility.swift in Sources */,
 				7AA5912B28800E980027CB76 /* DailyChallangeApp.swift in Sources */,
-				F32F29D728807D3F0036128F /* Card.swift in Sources */,
 				09CA2A6C2882D52A0074A9B5 /* SignUpView.swift in Sources */,
+				09B307B72887F4CF00976C40 /* CardStore.swift in Sources */,
 				F3CD3ACB28830AB40037FF9E /* LoginView.swift in Sources */,
+				09B307C42888050700976C40 /* Step.swift in Sources */,
 				F3982CF22885679800240987 /* StatsView.swift in Sources */,
-				09ABF46B2885FCB700462F9E /* Utente.swift in Sources */,
-				F3982CF0288553DE00240987 /* CardStore.swift in Sources */,
+				09C0C62E2886C5250054F23D /* User.swift in Sources */,
+				09B307BB2887F56100976C40 /* ContentView.swift in Sources */,
 				F3F994992885CAA4001D2D59 /* ChallengeData.swift in Sources */,
 				F3F8CADF28847EB800A89DBC /* ProfileView.swift in Sources */,
 				F38DD4F92881E6BA00289C43 /* WelcomeView.swift in Sources */,
@@ -569,12 +616,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DailyChallange/DailyChallange.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyChallange/Preview Content\"";
 				DEVELOPMENT_TEAM = L3L683RF95;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DailyChallange/iOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -598,12 +647,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DailyChallange/DailyChallange.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyChallange/Preview Content\"";
 				DEVELOPMENT_TEAM = L3L683RF95;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DailyChallange/iOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
