@@ -46,7 +46,7 @@ struct Card: Hashable {
         }
     }
     let goal: Double
-    let achievement: Double
+    var achievement: Double
     let category: ChallengeData.Category
     let points: Int
     var percentageComplete: Double? {
@@ -54,7 +54,7 @@ struct Card: Hashable {
             return nil
         }
         else{
-            return (goal*achievement)/100
+            return (achievement*100)/goal
         }
     }
     var percentageText: String? {

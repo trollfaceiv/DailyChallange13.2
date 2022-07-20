@@ -19,14 +19,14 @@ struct WelcomeView: View {
                         .padding(30)
                     Spacer()
                     NavigationLink(
-                        destination: SignUpView().navigationBarHidden(true),
+                        destination: SignUpView().environmentObject(DataManager()).navigationBarHidden(true),
                         label: {
                             PrimaryButton(title: "Get Started")
                         })
                         .navigationBarHidden(true)
                     
                     NavigationLink(
-                        destination: LoginView().navigationBarHidden(true),
+                        destination: LoginView().environmentObject(DataManager()).navigationBarHidden(true),
                         label: {
                             Text("Sign In")
                                 .font(.title3)

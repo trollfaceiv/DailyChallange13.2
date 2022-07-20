@@ -19,7 +19,7 @@ struct CardView: View {
     @EnvironmentObject var dataManager: DataManager
     @State private var wellness = User.Wellness()
     
-    let card: Card
+    var card: Card
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 10).fill(Color(.white))
@@ -53,13 +53,10 @@ struct CardView: View {
                     Button(action: {
                         if wellness.utente.isLogged {
                         let newCard : Card = .init(id: card.id, goal: card.goal, achievement: 0, category: card.category, points: card.points)
-                        print("prima")
                         cards.inProgressCards.append(newCard)
-                            print("dentro")
-                        dataManager.addAttivita(challenge: ChallengeData.allChallenges[1])
-                            print("database")
-                        wellness.utente.attivitaSvolte.append(ChallengeData.allChallenges[1])
-                            print("\(wellness.utente.username)")
+                            let challenge = ChallengeData(category: newCard.category, value: newCard.goal, valueProgress: newCard.achievement, label: "", data: Date())
+                        dataManager.addAttivita(challenge: challenge)
+                        wellness.utente.attivitaSvolte.append(challenge)
                         dataManager.updateUtente(utente:wellness.utente)
                             
                         wellness.save()
@@ -85,8 +82,6 @@ struct CardView: View {
                             
                         }
                         
-                        
-                        
                     }) {
                         Image(systemName: "plus")
                             .frame(width: 40, height: 40)
@@ -103,6 +98,11 @@ struct CardView: View {
             }
         }.padding()
         }
+    }
+    
+    mutating func calcoloPercentuale(challenge: inout ChallengeData){
+        challenge.valueProgress = Double(ContentView().steps[7].count)
+        card.achievement = challenge.valueProgress
     }
 }
 
@@ -125,5 +125,6 @@ struct MeditationProgressViewStyle: ProgressViewStyle {
             
         }
     }
+
 }
 

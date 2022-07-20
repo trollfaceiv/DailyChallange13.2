@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject var dataManager: DataManager
-    
+
     var body: some View {
-        Home()
+        Home(wellness: User.Wellness())
     }
 }
 
@@ -24,7 +24,7 @@ struct ProfileView_Previews: PreviewProvider {
 struct Home : View {
     
     @State var index = 0
-    
+    @State var wellness : User.Wellness
     //da sostituire con il totale delle sfide per ogni categoria
     @State private var totalChallenges = 100
     
@@ -70,11 +70,11 @@ struct Home : View {
                 
                 VStack(alignment: .leading, spacing: 12){
                     
-                    Text("Kavuya")
+                    Text("\(wellness.utente.username)")
                         .font(.custom("Avenir-Medium", size: 25))
                         .foregroundColor(Color.black.opacity(0.8))
                     
-                    Text("Level 4")
+                    Text("Level \(wellness.utente.livello)")
                         .font(.custom("Avenir-Heavy", size: 20))
                         .foregroundColor(Color(.systemBlue).opacity(0.7))
                         .padding(.top, 2)
@@ -126,6 +126,7 @@ struct Home : View {
                 Button(action: {
                     
                     self.index = 2
+                    SettingsView()
                     
                 }) {
                     
