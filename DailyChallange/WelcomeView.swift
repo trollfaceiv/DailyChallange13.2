@@ -18,7 +18,9 @@ struct WelcomeView: View {
                     Image("Gym").resizable()
                         .scaledToFit()
                         .padding(30)
-                    Spacer()
+                    Text("Log in to accept challenges and keep track of your progress").frame(width: 300).multilineTextAlignment(.center).padding(.bottom, 20)
+                        .font(.custom("Avenir-Medium", size: 18))
+
                     NavigationLink(
                         destination: SignUpView(wellness:wellness).environmentObject(DataManager()).navigationBarHidden(false),
                         label: {

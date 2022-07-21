@@ -15,6 +15,28 @@ struct StatsView: View {
     @State var total: Int
     var body: some View {
         VStack {
+            switch(category){
+            case ChallengeData.Category.miles:
+                Text("Mile challenges report")
+                    .font(.custom("Avenir-Heavy", size: 21))
+                    .multilineTextAlignment(.center)
+
+            case ChallengeData.Category.steps:
+                Text("Step challenges report")
+                    .font(.custom("Avenir-Heavy", size: 21))
+                    .multilineTextAlignment(.center)
+
+            case ChallengeData.Category.calories:
+                Text("Burning-calory challenges report")
+                    .font(.custom("Avenir-Heavy", size: 21))
+                    .multilineTextAlignment(.center)
+
+            default:
+                Text("Speed challenges report")
+                    .font(.custom("Avenir-Heavy", size: 21))
+                    .multilineTextAlignment(.center)
+            }
+                
             PieChart(total:total, entries: ChallengeData.entriesForChallenges(ChallengeData.allChallenges,
                                                    category: category),
                      category: $category)

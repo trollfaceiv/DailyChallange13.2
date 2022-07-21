@@ -15,10 +15,13 @@ struct CustomTabBar: View {
     
     var body: some View {
         HStack( spacing: 0){
-            TabBarButton(image: "flag", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            TabBarButton(image: "person", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            TabBarButton(image: "bell", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            TabBarButton(image: "person.2", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            VStack{
+                TabBarButton(image: "flag", text: "Challenges", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                    
+            }.frame(maxHeight:5)
+            TabBarButton(image: "person", text: "Profile", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButton(image: "bell", text: "Notifications", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButton(image: "person.2", text: "Friends", selectedTab: $selectedTab, tabPoints: $tabPoints)
         }
         .padding()
         .background(Color.white.clipShape(TabCurve(tabPoint: getCurvePoint() - 15)))
@@ -55,6 +58,7 @@ struct CustomTabBar: View {
 
 struct TabBarButton: View {
     var image: String
+    var text: String
     @Binding var selectedTab: String
     @Binding var tabPoints: [CGFloat]
     
@@ -74,9 +78,14 @@ struct TabBarButton: View {
                         selectedTab = image
                     }
                 }, label: {
+                    VStack{
                     Image(systemName: "\(image)\(selectedTab == image ? ".fill" : "")")
                         .font(.system(size: 25, weight: .semibold))
                         .foregroundColor(Color(.systemBlue))
+                    Text("\(text)")
+                        .font(.custom("Avenir-Heavy", size: 10))
+                        .foregroundColor(Color(.systemBlue))
+                    }
                 })
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .offset(y:selectedTab == image ? -10 : 0)

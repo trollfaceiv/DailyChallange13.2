@@ -21,6 +21,7 @@ struct ContentView: View {
     //@StateObject var cardStore = CardStore()
     @ObservedObject var cardStore: Card.Cards
     @EnvironmentObject var dataManager: DataManager
+    @State private var showingAlert = false
 
     init() {
         healthStore = HealthStore()
@@ -73,11 +74,18 @@ struct ContentView: View {
                     wellness.save()
                     cardStore.save()
                     }
+                    else{
+                        showingAlert = true
+                    }
                 }, label: {
                     Text("Start Daily Challenge")
                         .foregroundColor(.white)
                         .font(.custom("Avenir-Heavy", size: 18))
-                })
+                }).alert("You need to login in to accept a challenge", isPresented: $showingAlert) {
+                    Button("OK", role: .cancel) {
+                        //selectedTab = "person"
+                    }
+                }
                 
             }
         }.padding(.vertical, 20)
@@ -109,8 +117,7 @@ struct ContentView: View {
             Text("Recommended")
                 .font(.custom("Avenir-Heavy", size: 18))
             Spacer()
-            Image(systemName: "arrow.right")
-                .foregroundColor(Color(.systemBlue))
+            
         }
         ScrollView(.horizontal, showsIndicators: false){
             HStack(spacing: 16) {
@@ -118,14 +125,14 @@ struct ContentView: View {
                     ForEach(cardStore.availableCards, id: \.self){
                         card in
                         CardView(isDailyStarted: $cardStore.isDailyStarted, inProgress: false, card: card)
-                            .frame(width: 200, height: 300).environmentObject(cardStore).environmentObject(DataManager())
+                            .frame(width: 300, height: 200).environmentObject(cardStore).environmentObject(DataManager())
                     }
                 }
                 else{
                     ForEach(Card.Cards.availableCardsImmutable, id: \.self){
                         card in
                         CardView(isDailyStarted: $cardStore.isDailyStarted, inProgress: false, card: card)
-                            .frame(width: 360).environmentObject(cardStore).environmentObject(DataManager())
+                            .frame(width: 300, height: 200).environmentObject(cardStore).environmentObject(DataManager())
                     }
                 }
             }
@@ -143,7 +150,9 @@ struct ContentView: View {
                                 Text("Welcome Newbie")                        .font(.custom("Avenir-Heavy", size: 30))
                             }
                             else{
-                                Text("Welcome Back \(wellness.utente.username)")
+                                let comps = wellness.utente.username.components(separatedBy: "@")
+                                let username = comps[0]
+                                Text("Welcome Back \(username)")
                                     .font(.custom("Avenir-Heavy", size: 30))
                             }
                             Text("Ready to start your day")

@@ -22,6 +22,7 @@ struct CardView: View {
     public var healthStore: HealthStore? = HealthStore()
     @State public var steps: [Step] = [Step]()
     @State var inProgress : Bool
+    @State private var showingAlert = false
     
     
     
@@ -86,20 +87,23 @@ struct CardView: View {
                                 cards.save()
                             }
                             else{
-                                
+                                showingAlert = true
                             }
                             
                         }) {
-                            Image(systemName: "plus")
-                                .frame(width: 40, height: 40)
+                            Text("Accept challenge")
+                                .frame(width: 200, height: 50)
                                 .foregroundColor(.white)
-                                .font(.system(size: 22))
+                                .font(.custom("Avenir-Heavy", size: 18))
                                 .background(Color(.systemBlue))
                                 .cornerRadius(10)
+                                
                             
                             
+                        }.alert("You need to login in to accept a challenge", isPresented: $showingAlert) {
+                            Button("OK", role: .cancel) { }
                         }
-                        
+                        Spacer()
                         
                     }
                 }

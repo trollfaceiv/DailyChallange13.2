@@ -70,8 +70,9 @@ struct Home : View {
                 }
                 
                 VStack(alignment: .leading, spacing: 12){
-                    
-                    Text("\(wellness.utente.username)")
+                    let comps = wellness.utente.username.components(separatedBy: "@")
+                    let username = comps[0]
+                    Text("\(username)")
                         .font(.custom("Avenir-Medium", size: 25))
                         .foregroundColor(Color.black.opacity(0.8))
                     
@@ -287,7 +288,7 @@ struct Home : View {
         }
         .background(Color("Color1").edgesIgnoringSafeArea(.all))
         .navigationBarHidden(true)
-        .background(Color(.systemGray5).edgesIgnoringSafeArea(.all))
+        .background(Color(.systemGroupedBackground).edgesIgnoringSafeArea(.all))
 
         
         }.statusBar(hidden: true)

@@ -43,7 +43,7 @@ struct SignUpView: View {
                         .bold()
                     
                     VStack(spacing: 20){
-                        CustomTextField(image: "person", placeHolder: "Username", txt: $username, bgColor: iconUserColor)
+                        CustomTextField(image: "person", placeHolder: "Email", txt: $username, bgColor: iconUserColor)
                         
                         CustomTextField(image: "lock", placeHolder: "Password", txt: $password, bgColor: iconPasswordColor)
                         

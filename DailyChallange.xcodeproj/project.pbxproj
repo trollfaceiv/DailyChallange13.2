@@ -621,7 +621,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyChallange/Preview Content\"";
-				DEVELOPMENT_TEAM = 4773783P7J;
+				DEVELOPMENT_TEAM = NAZZYW6QSQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DailyChallange/iOS/Info.plist;
@@ -635,7 +635,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = it.unisa.applefoundationprogram.group4.DailylChallange13.2;
+				PRODUCT_BUNDLE_IDENTIFIER = it.unisa.applefoundationprogram.group4.DailyyChallenge13.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -653,7 +653,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyChallange/Preview Content\"";
-				DEVELOPMENT_TEAM = 4773783P7J;
+				DEVELOPMENT_TEAM = NAZZYW6QSQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DailyChallange/iOS/Info.plist;
@@ -667,7 +667,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = it.unisa.applefoundationprogram.group4.DailylChallange13.2;
+				PRODUCT_BUNDLE_IDENTIFIER = it.unisa.applefoundationprogram.group4.DailyyChallenge13.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
