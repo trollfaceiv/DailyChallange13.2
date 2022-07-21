@@ -96,8 +96,8 @@ struct ContentView: View {
             HStack(spacing: 16) {
                 ForEach(cardStore.inProgressCards, id: \.self){
                     card in
-                    CardView(isDailyStarted: $cardStore.isDailyStarted, card: card)
-                        .frame(width: 360).environmentObject(DataManager())
+                    CardView(isDailyStarted: $cardStore.isDailyStarted, inProgress: true, card: card)
+                        .frame(width: 360).environmentObject(DataManager()).environmentObject(cardStore)
                 }
             }
     }
@@ -117,14 +117,14 @@ struct ContentView: View {
                 if !wellness.utente.username.isEmpty{
                     ForEach(cardStore.availableCards, id: \.self){
                         card in
-                        CardView(isDailyStarted: $cardStore.isDailyStarted, card: card)
+                        CardView(isDailyStarted: $cardStore.isDailyStarted, inProgress: false, card: card)
                             .frame(width: 200, height: 300).environmentObject(cardStore).environmentObject(DataManager())
                     }
                 }
                 else{
                     ForEach(Card.Cards.availableCardsImmutable, id: \.self){
                         card in
-                        CardView(isDailyStarted: $cardStore.isDailyStarted, card: card)
+                        CardView(isDailyStarted: $cardStore.isDailyStarted, inProgress: false, card: card)
                             .frame(width: 360).environmentObject(cardStore).environmentObject(DataManager())
                     }
                 }
@@ -159,23 +159,6 @@ struct ContentView: View {
                             recommendedSectionView
                             Spacer()
                             Spacer()
-                        }.onAppear {
-                            print("on appear è triggerato")
-                            if let healthStore = healthStore {
-                                healthStore.requestAuthorization { success in
-                                    if success {
-                                        healthStore.calculateSteps { statisticsCollection in
-                                            if let statisticsCollection = statisticsCollection {
-                                                // update the UI
-                                                updateUIFromStatistics(statisticsCollection)
-                                                print("I passi di oggi sono:  \(steps[7])")
-                                                print("I passi di ieri sono: \(steps[6])")
-                                            }
-                                        }
-                                        
-                                    }
-                                }
-                            }
                         }
                         .frame(width: .infinity, height: 600)
                         .padding(.horizontal, 24)

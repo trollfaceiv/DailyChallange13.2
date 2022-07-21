@@ -34,15 +34,19 @@ struct Card: Hashable, Codable {
         }
     }
     var subtitle: String {
+        let value = goal - achievement
+        if value <= 0 {
+            return "Obiettivo completato"
+        }
         switch(category){
         case ChallengeData.Category.miles:
-            return "\(goal - achievement) miles left"
+            return "\(value) miles left"
         case ChallengeData.Category.steps:
-            return "\(goal - achievement) steps left"
+            return "\(value) steps left"
         case ChallengeData.Category.calories:
-            return "\(goal - achievement) calories left"
+            return "\(value) calories left"
         default:
-            return "\(goal - achievement) km/h left"
+            return "\(value) km/h left"
         }
     }
     let goal: Double
@@ -54,7 +58,13 @@ struct Card: Hashable, Codable {
             return nil
         }
         else{
-            return (achievement*100)/goal
+            let perc = (achievement*100)/goal
+            if perc > 100 {
+                return 100
+            }
+            else{
+                return perc
+            }
         }
     }
     var percentageText: String? {
@@ -70,18 +80,18 @@ struct Card: Hashable, Codable {
         @Published var isDailyStarted = false
         static var availableCardsImmutable : [Card] = [
             .init(id:0, goal: 2, achievement: -1,  category:ChallengeData.Category.miles, points: 5),
-            .init(id:1, goal: 1000, achievement: -1, category:ChallengeData.Category.steps, points: 25),
+            .init(id:1, goal: 2000, achievement: -1, category:ChallengeData.Category.steps, points: 25),
             .init(id:2, goal: 5, achievement: -1, category:ChallengeData.Category.miles, points: 25)]
         
         @Published var availableCards : [Card] = [
             .init(id:0, goal: 2, achievement: -1,  category:ChallengeData.Category.miles, points: 5),
-            .init(id:1, goal: 1000, achievement: -1, category:ChallengeData.Category.steps, points: 25),
+            .init(id:1, goal: 2000, achievement: -1, category:ChallengeData.Category.steps, points: 25),
             .init(id:2, goal: 5, achievement: -1, category:ChallengeData.Category.miles, points: 25)
         ]
         
         @Published var dailyChallengeCards: [Card] = [
             .init(id:1, goal: 3, achievement: 0, category: ChallengeData.Category.miles, points: 10),
-            .init(id:2, goal: 520, achievement: 0, category: ChallengeData.Category.steps, points: 25),
+            .init(id:2, goal: 200, achievement: 0, category: ChallengeData.Category.steps, points: 25),
             .init(id:3, goal: 1200, achievement: 0, category: ChallengeData.Category.calories, points: 15)
         ]
         
