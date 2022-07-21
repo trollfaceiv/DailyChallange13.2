@@ -102,7 +102,7 @@ struct Home : View {
                         .foregroundColor(self.index == 0 ? Color.blue : .gray)
                         .padding(.vertical, 10)
                         .padding(.horizontal)
-                        .background(self.index == 0 ? Color(.systemGray5) : Color.clear)
+                        .background(self.index == 0 ? Color(.white) : Color.clear)
                         .cornerRadius(10)
                 }
                 
@@ -118,7 +118,7 @@ struct Home : View {
                         .foregroundColor(self.index == 1 ? Color.blue : .gray)
                         .padding(.vertical, 10)
                         .padding(.horizontal)
-                        .background(self.index == 1 ? Color(.systemGray5) : Color.clear)
+                        .background(self.index == 1 ? Color(.white) : Color.clear)
                         .cornerRadius(10)
                 }
                 
@@ -134,13 +134,13 @@ struct Home : View {
                         .foregroundColor(self.index == 2 ? Color.blue : .gray)
                         .padding(.vertical, 10)
                         .padding(.horizontal)
-                        .background(self.index == 2 ? Color(.systemGray5) : Color.clear)
+                        .background(self.index == 2 ? Color(.white) : Color.clear)
                         .cornerRadius(10)
                 }
             }
             .padding(.horizontal,8)
             .padding(.vertical,5)
-            .background(Color(.systemGray5))
+            .background(Color(.white))
             .cornerRadius(8)
             .shadow(color: Color.black.opacity(0.1), radius: 5, x: 8, y: 8)
             .shadow(color: Color.white.opacity(0.5), radius: 5, x: -8, y: -8)
@@ -287,8 +287,11 @@ struct Home : View {
         }
         .background(Color("Color1").edgesIgnoringSafeArea(.all))
         .navigationBarHidden(true)
+        .background(Color(.systemGray5).edgesIgnoringSafeArea(.all))
+
         
         }.statusBar(hidden: true)
-            .padding(.vertical, 40)
+            .padding(.vertical, 20)
+        
     }
 }

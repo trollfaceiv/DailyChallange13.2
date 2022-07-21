@@ -20,8 +20,6 @@
 		09B307BE2888032700976C40 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B307BD2888032700976C40 /* HealthKit.framework */; };
 		09B307C42888050700976C40 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B307C32888050700976C40 /* Step.swift */; };
 		09B307C62888055B00976C40 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B307C52888055B00976C40 /* HealthStore.swift */; };
-		09C0C62B288699990054F23D /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C0C628288699330054F23D /* Charts.framework */; platformFilter = ios; };
-		09C0C62C288699990054F23D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09C0C628288699330054F23D /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		09C0C62E2886C5250054F23D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0C62D2886C5240054F23D /* User.swift */; };
 		09CA2A6C2882D52A0074A9B5 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CA2A6B2882D52A0074A9B5 /* SignUpView.swift */; };
 		7AA5912B28800E980027CB76 /* DailyChallangeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5912A28800E980027CB76 /* DailyChallangeApp.swift */; };
@@ -30,6 +28,8 @@
 		7AA5913C28800E9A0027CB76 /* DailyChallangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5913B28800E9A0027CB76 /* DailyChallangeTests.swift */; };
 		7AA5914628800E9A0027CB76 /* DailyChallangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5914528800E9A0027CB76 /* DailyChallangeUITests.swift */; };
 		7AA5914828800E9A0027CB76 /* DailyChallangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5914728800E9A0027CB76 /* DailyChallangeUITestsLaunchTests.swift */; };
+		F30292D0288941050082817D /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30292CD288940F10082817D /* Charts.framework */; platformFilter = ios; };
+		F30292D1288941050082817D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F30292CD288940F10082817D /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F32F29D528807D040036128F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F29D428807D040036128F /* CardView.swift */; };
 		F33BD1712881682F00BD207E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33BD1702881682F00BD207E /* CustomTabBar.swift */; };
 		F38DD4F72881BC9500289C43 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DD4F62881BC9500289C43 /* TabCurve.swift */; };
@@ -56,20 +56,6 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
-		09C0C627288699330054F23D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 09C0C622288699330054F23D /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
-			remoteInfo = Charts;
-		};
-		09C0C629288699330054F23D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 09C0C622288699330054F23D /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
-			remoteInfo = ChartsTests;
-		};
 		7AA5913828800E990027CB76 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7AA5911F28800E980027CB76 /* Project object */;
@@ -84,6 +70,20 @@
 			remoteGlobalIDString = 7AA5912628800E980027CB76;
 			remoteInfo = DailyChallange;
 		};
+		F30292CC288940F10082817D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F30292C7288940F10082817D /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		F30292CE288940F10082817D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F30292C7288940F10082817D /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -93,7 +93,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				09C0C62C288699990054F23D /* Charts.framework in Embed Frameworks */,
+				F30292D1288941050082817D /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,7 +101,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		09ABF4642885F76900462F9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		09ABF4642885F76900462F9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09ABF4662885F85F00462F9E /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		09ABF4682885FC7000462F9E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		09B307B62887F4CF00976C40 /* CardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStore.swift; sourceTree = "<group>"; };
@@ -109,10 +109,9 @@
 		09B307BA2887F56100976C40 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../../../Downloads/ContentView.swift; sourceTree = "<group>"; };
 		09B307BC2888032700976C40 /* DailyChallange.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyChallange.entitlements; sourceTree = "<group>"; };
 		09B307BD2888032700976C40 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		09B307C32888050700976C40 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Step.swift; path = ../../../Step.swift; sourceTree = "<group>"; };
-		09B307C52888055B00976C40 /* HealthStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthStore.swift; path = ../../HealthStore.swift; sourceTree = "<group>"; };
+		09B307C32888050700976C40 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		09B307C52888055B00976C40 /* HealthStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		09B307C7288807B500976C40 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09C0C622288699330054F23D /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../Charts-master-4 2/Charts.xcodeproj"; sourceTree = "<group>"; };
 		09C0C62D2886C5240054F23D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09CA2A6B2882D52A0074A9B5 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		7AA5912728800E980027CB76 /* DailyChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +123,7 @@
 		7AA5914128800E9A0027CB76 /* DailyChallangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyChallangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA5914528800E9A0027CB76 /* DailyChallangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallangeUITests.swift; sourceTree = "<group>"; };
 		7AA5914728800E9A0027CB76 /* DailyChallangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F30292C7288940F10082817D /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master-4 2/Charts.xcodeproj"; sourceTree = "<group>"; };
 		F32F29D428807D040036128F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F33BD1702881682F00BD207E /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		F38DD4F62881BC9500289C43 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 			files = (
 				09ABF45E2885F4F400462F9E /* FirebaseDatabaseSwift in Frameworks */,
 				09ABF45C2885F4F400462F9E /* FirebaseDatabase in Frameworks */,
-				09C0C62B288699990054F23D /* Charts.framework in Frameworks */,
+				F30292D0288941050082817D /* Charts.framework in Frameworks */,
 				09B307BE2888032700976C40 /* HealthKit.framework in Frameworks */,
 				09ABF4602885F4F400462F9E /* FirebaseFirestore in Frameworks */,
 				09ABF45A2885F4F400462F9E /* FirebaseAuth in Frameworks */,
@@ -180,15 +180,6 @@
 				09B307C7288807B500976C40 /* Info.plist */,
 			);
 			path = iOS;
-			sourceTree = "<group>";
-		};
-		09C0C623288699330054F23D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				09C0C628288699330054F23D /* Charts.framework */,
-				09C0C62A288699330054F23D /* ChartsTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		7AA5911E28800E980027CB76 = {
@@ -233,7 +224,7 @@
 				09CA2A6B2882D52A0074A9B5 /* SignUpView.swift */,
 				F3CD3ACA28830AB40037FF9E /* LoginView.swift */,
 				F3F8CADE28847EB800A89DBC /* ProfileView.swift */,
-				09C0C622288699330054F23D /* Charts.xcodeproj */,
+				F30292C7288940F10082817D /* Charts.xcodeproj */,
 				F3982CF12885679800240987 /* StatsView.swift */,
 				F3F994962885CA28001D2D59 /* PieChart.swift */,
 				F3F994982885CAA4001D2D59 /* ChallengeData.swift */,
@@ -267,6 +258,15 @@
 				7AA5914728800E9A0027CB76 /* DailyChallangeUITestsLaunchTests.swift */,
 			);
 			path = DailyChallangeUITests;
+			sourceTree = "<group>";
+		};
+		F30292C8288940F10082817D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F30292CD288940F10082817D /* Charts.framework */,
+				F30292CF288940F10082817D /* ChartsTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		F3F994922885C9DC001D2D59 /* Frameworks */ = {
@@ -380,8 +380,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 09C0C623288699330054F23D /* Products */;
-					ProjectRef = 09C0C622288699330054F23D /* Charts.xcodeproj */;
+					ProductGroup = F30292C8288940F10082817D /* Products */;
+					ProjectRef = F30292C7288940F10082817D /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -394,18 +394,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		09C0C628288699330054F23D /* Charts.framework */ = {
+		F30292CD288940F10082817D /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = 09C0C627288699330054F23D /* PBXContainerItemProxy */;
+			remoteRef = F30292CC288940F10082817D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		09C0C62A288699330054F23D /* ChartsTests.xctest */ = {
+		F30292CF288940F10082817D /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = 09C0C629288699330054F23D /* PBXContainerItemProxy */;
+			remoteRef = F30292CE288940F10082817D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

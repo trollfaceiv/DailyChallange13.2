@@ -20,14 +20,14 @@ struct WelcomeView: View {
                         .padding(30)
                     Spacer()
                     NavigationLink(
-                        destination: SignUpView(wellness:wellness).environmentObject(DataManager()).navigationBarHidden(true),
+                        destination: SignUpView(wellness:wellness).environmentObject(DataManager()).navigationBarHidden(false),
                         label: {
                             PrimaryButton(title: "Get Started")
                         })
                         .navigationBarHidden(true)
                     
                     NavigationLink(
-                        destination: LoginView(wellness:wellness).environmentObject(DataManager()).navigationBarHidden(true),
+                        destination: LoginView(wellness:wellness).environmentObject(DataManager()).navigationBarHidden(false),
                         label: {
                             Text("Sign In")
                                 .font(.title3)
@@ -41,10 +41,11 @@ struct WelcomeView: View {
                                 .padding(.vertical)
                         })
                         .navigationBarHidden(true)
+                    Spacer()
 
                 }
                 .padding()
-            }
+            }.navigationBarHidden(true)
         }
     }
 }

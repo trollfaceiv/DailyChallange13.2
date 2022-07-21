@@ -21,6 +21,9 @@ struct StatsView: View {
             
         }
         .padding(.horizontal)
+        .ignoresSafeArea(.all)
+        
+        
     }
 }
 

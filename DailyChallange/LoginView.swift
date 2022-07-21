@@ -51,7 +51,7 @@ struct LoginView: View {
                     }
                     
                     NavigationLink(
-                        destination: ProfileView(wellness:wellness)                        .navigationBarHidden(true), isActive: $showingProfileScreen){
+                        destination: ProfileView(wellness:wellness).navigationBarHidden(true)                        .navigationBarHidden(true), isActive: $showingProfileScreen){
                             EmptyView()
                         }
                     Spacer().frame(width: 400, height: 350)

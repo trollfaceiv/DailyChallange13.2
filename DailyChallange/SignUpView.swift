@@ -62,7 +62,7 @@ struct SignUpView: View {
                     }
                     
                     NavigationLink(
-                        destination: ProfileView(wellness:wellness)                        .navigationBarHidden(true)
+                        destination: ProfileView(wellness:wellness).navigationBarHidden(true)                       .navigationBarHidden(true)
 , isActive: $showingProfileScreen){
                             EmptyView()
                         }
