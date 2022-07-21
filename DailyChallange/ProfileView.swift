@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+//commento fittizio
 struct ProfileView: View {
     @EnvironmentObject var dataManager: DataManager
     @ObservedObject var wellness: User.Wellness

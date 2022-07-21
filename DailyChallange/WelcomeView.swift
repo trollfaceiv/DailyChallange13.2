@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+//commento fittizio
 struct WelcomeView: View {
     @ObservedObject var wellness: User.Wellness
     var body: some View {

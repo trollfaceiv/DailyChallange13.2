@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Charts
+//commento fittizio
 
 struct StatsView: View {
     @State private var pieChartEntries: [PieChartDataEntry] = []

@@ -8,6 +8,7 @@
 import SwiftUI
 import Firebase
 
+//commento fittizio
 struct SignUpView: View {
     @EnvironmentObject var dataManager: DataManager
 

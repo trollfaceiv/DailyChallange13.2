@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Firebase
-
+//commento fittizio
 struct LoginView: View {
     @EnvironmentObject var dataManager: DataManager
     @State private var username = ""
