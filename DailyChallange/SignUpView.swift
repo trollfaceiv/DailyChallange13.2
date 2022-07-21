@@ -20,7 +20,7 @@ struct SignUpView: View {
     @State private var iconUserColor : Color = Color(.systemBlue)
     @State private var iconPasswordColor : Color = Color(.systemBlue)
     @State private var slider = IntSlider()
-    @State private var wellness = User.Wellness()
+    @StateObject public var wellness : User.Wellness
     
     var body: some View {
         NavigationView{
@@ -62,7 +62,8 @@ struct SignUpView: View {
                     }
                     
                     NavigationLink(
-                        destination: ProfileView(), isActive: $showingProfileScreen){
+                        destination: ProfileView(wellness:wellness)                        .navigationBarHidden(true)
+, isActive: $showingProfileScreen){
                             EmptyView()
                         }
                     Spacer().frame(width: 400, height: 250)
@@ -70,6 +71,7 @@ struct SignUpView: View {
             }
         }
         .navigationBarHidden(true)
+        .ignoresSafeArea()
     }
     func authenticateUser(username: String, password: String){
         iconPasswordColor = Color(.systemBlue)
@@ -87,7 +89,6 @@ struct SignUpView: View {
                 showingProfileScreen.toggle()
                 wellness.utente.id = username
                 wellness.utente.username = username
-                print("\(slider.score) ueeeee")
                 wellness.utente.livello = UsefulValues.livello
                 wellness.utente.attivitaSvolte = []
                 wellness.utente.isLogged = true
@@ -124,6 +125,6 @@ struct IntSlider: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignUpView(wellness: User.Wellness())
     }
 }

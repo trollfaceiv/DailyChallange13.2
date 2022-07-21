@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    @ObservedObject var wellness: User.Wellness
     var body: some View {
         NavigationView {
             ZStack {
@@ -19,14 +20,14 @@ struct WelcomeView: View {
                         .padding(30)
                     Spacer()
                     NavigationLink(
-                        destination: SignUpView().environmentObject(DataManager()).navigationBarHidden(true),
+                        destination: SignUpView(wellness:wellness).environmentObject(DataManager()).navigationBarHidden(true),
                         label: {
                             PrimaryButton(title: "Get Started")
                         })
                         .navigationBarHidden(true)
                     
                     NavigationLink(
-                        destination: LoginView().environmentObject(DataManager()).navigationBarHidden(true),
+                        destination: LoginView(wellness:wellness).environmentObject(DataManager()).navigationBarHidden(true),
                         label: {
                             Text("Sign In")
                                 .font(.title3)
@@ -40,8 +41,7 @@ struct WelcomeView: View {
                                 .padding(.vertical)
                         })
                         .navigationBarHidden(true)
-                    
-                    
+
                 }
                 .padding()
             }
@@ -65,7 +65,7 @@ struct PrimaryButton: View {
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        WelcomeView(wellness: User.Wellness())
     }
 }
 

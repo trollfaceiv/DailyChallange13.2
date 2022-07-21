@@ -9,15 +9,16 @@ import SwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject var dataManager: DataManager
+    @ObservedObject var wellness: User.Wellness
 
     var body: some View {
-        Home(wellness: User.Wellness())
+        Home(wellness: wellness)
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(wellness: User.Wellness())
     }
 }
 
@@ -27,7 +28,7 @@ struct Home : View {
     @State var wellness : User.Wellness
     //da sostituire con il totale delle sfide per ogni categoria
     @State private var totalChallenges = 100
-    
+    @State private var pressed = false
     
     var body: some View{
         NavigationView{
@@ -126,7 +127,6 @@ struct Home : View {
                 Button(action: {
                     
                     self.index = 2
-                    SettingsView()
                     
                 }) {
                     
@@ -262,7 +262,27 @@ struct Home : View {
             .padding(.top,20)
             
         }
-            
+            else{
+                if index == 2{
+                    Button("Log Out"){
+                        wellness.remove()
+                        pressed = true
+                    }.font(.title3)
+                        .foregroundColor(Color(.systemBlue))
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.white)
+                        .cornerRadius(50.0)
+                        .shadow(color: Color.black.opacity(0.08), radius: 60, x: 0.0, y: 16)
+                        .padding(.vertical)
+                    
+                    NavigationLink(
+                        destination: WelcomeView(wellness: wellness)                        .navigationBarHidden(true).ignoresSafeArea(), isActive: $pressed){
+                            EmptyView()
+                        }
+                }
+            }
+    
             Spacer(minLength: 0)
         }
         .background(Color("Color1").edgesIgnoringSafeArea(.all))

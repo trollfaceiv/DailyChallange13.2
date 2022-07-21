@@ -22,6 +22,7 @@ struct ChallengeData: Codable {
         let requestedWines = wines.filter {$0.category == category}
         return requestedWines.map { PieChartDataEntry(value: $0.value, label: $0.label)}
     }
+    
     static var allChallenges:[ChallengeData] {
         [
             ChallengeData(category: .calories, value: 20, valueProgress: 0, label: "Won", data: Date()),

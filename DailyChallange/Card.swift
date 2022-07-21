@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Card: Hashable {
+struct Card: Hashable, Codable {
     let id : Int 
     var iconName: String {
         switch(category){
@@ -63,6 +63,99 @@ struct Card: Hashable {
         }
         
         return "\(percentageComplete)"
-
+    }
+    
+    @MainActor class Cards: ObservableObject{
+        @Published var inProgressCards: [Card]
+        @Published var isDailyStarted = false
+        static var availableCardsImmutable : [Card] = [
+            .init(id:0, goal: 2, achievement: -1,  category:ChallengeData.Category.miles, points: 5),
+            .init(id:1, goal: 1000, achievement: -1, category:ChallengeData.Category.steps, points: 25),
+            .init(id:2, goal: 5, achievement: -1, category:ChallengeData.Category.miles, points: 25)]
+        
+        @Published var availableCards : [Card] = [
+            .init(id:0, goal: 2, achievement: -1,  category:ChallengeData.Category.miles, points: 5),
+            .init(id:1, goal: 1000, achievement: -1, category:ChallengeData.Category.steps, points: 25),
+            .init(id:2, goal: 5, achievement: -1, category:ChallengeData.Category.miles, points: 25)
+        ]
+        
+        @Published var dailyChallengeCards: [Card] = [
+            .init(id:1, goal: 3, achievement: 0, category: ChallengeData.Category.miles, points: 10),
+            .init(id:2, goal: 520, achievement: 0, category: ChallengeData.Category.steps, points: 25),
+            .init(id:3, goal: 1200, achievement: 0, category: ChallengeData.Category.calories, points: 15)
+        ]
+        
+    init(){
+        if let data = UserDefaults.standard.data(forKey: "SavedCard"){
+            if let decoded = try? JSONDecoder().decode([Card].self, from: data){
+                inProgressCards = decoded
+                if let data = UserDefaults.standard.data(forKey: "Daily"){
+                    if let decoded = try? JSONDecoder().decode(Bool.self, from: data){
+                        isDailyStarted = decoded
+                        if let data = UserDefaults.standard.data(forKey: "Available"){
+                            if let decoded = try? JSONDecoder().decode([Card].self, from: data){
+                                availableCards = decoded
+                                return
+                            }
+                        }
+                        return
+                    }
+                }
+                
+                return
+            }
+        }
+        inProgressCards = []
+    }
+        
+        func fetch(){
+            if let data = UserDefaults.standard.data(forKey: "SavedCard"){
+                if let decoded = try? JSONDecoder().decode([Card].self, from: data){
+                    inProgressCards = decoded
+                    if let data = UserDefaults.standard.data(forKey: "Daily"){
+                        if let decoded = try? JSONDecoder().decode(Bool.self, from: data){
+                            isDailyStarted = decoded
+                            if let data = UserDefaults.standard.data(forKey: "Available"){
+                                if let decoded = try? JSONDecoder().decode([Card].self, from: data){
+                                    availableCards = decoded
+                                    return
+                                }
+                            }
+                            return
+                        }
+                    }
+                    
+                    return
+                }
+            }
+            inProgressCards = []
+        }
+        
+        func save(){
+            if let encoded = try? JSONEncoder().encode(inProgressCards){
+                UserDefaults.standard.set(encoded, forKey: "SavedCard")
+            }
+            if let encoded = try? JSONEncoder().encode(isDailyStarted){
+                UserDefaults.standard.set(encoded, forKey: "Daily")
+            }
+            if let encoded = try? JSONEncoder().encode(availableCards){
+                UserDefaults.standard.set(encoded, forKey: "Available")
+            }
+        }
+    
+        func remove(){
+            if let encoded = try? JSONEncoder().encode(inProgressCards){
+                UserDefaults.standard.removeObject(forKey: "SavedCard")
+                inProgressCards = []
+            }
+            if let encoded = try? JSONEncoder().encode(isDailyStarted){
+                UserDefaults.standard.removeObject(forKey: "Daily")
+                isDailyStarted = false
+            }
+            if let encoded = try? JSONEncoder().encode(availableCards){
+                UserDefaults.standard.removeObject(forKey: "Available")
+                inProgressCards = []
+            }
+        }
     }
 }

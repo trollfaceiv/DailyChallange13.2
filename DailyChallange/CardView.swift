@@ -14,7 +14,7 @@
 import SwiftUI
 
 struct CardView: View {
-    @EnvironmentObject var cards: CardStore
+    @EnvironmentObject var cards: Card.Cards
     @Binding var isDailyStarted: Bool
     @EnvironmentObject var dataManager: DataManager
     @State private var wellness = User.Wellness()
@@ -52,31 +52,32 @@ struct CardView: View {
                     Spacer()
                     Button(action: {
                         if wellness.utente.isLogged {
-                        let newCard : Card = .init(id: card.id, goal: card.goal, achievement: 0, category: card.category, points: card.points)
-                        cards.inProgressCards.append(newCard)
+                            let newCard : Card = .init(id: card.id, goal: card.goal, achievement: 0, category: card.category, points: card.points)
+                            cards.inProgressCards.append(newCard)
                             let challenge = ChallengeData(category: newCard.category, value: newCard.goal, valueProgress: newCard.achievement, label: "", data: Date())
-                        dataManager.addAttivita(challenge: challenge)
-                        wellness.utente.attivitaSvolte.append(challenge)
-                        dataManager.updateUtente(utente:wellness.utente)
-                            
-                        wellness.save()
-                        for i in 0..<cards.availableCards.count{
-                            if cards.availableCards[i].id == newCard.id {
-                                cards.availableCards.remove(at: i)
-                                break
+                            dataManager.addAttivita(challenge: challenge)
+                            wellness.utente.attivitaSvolte.append(challenge)
+                            dataManager.updateUtente(utente:wellness.utente)
+
+                            for i in 0..<cards.availableCards.count{
+                                if cards.availableCards[i].id == newCard.id {
+                                    cards.availableCards.remove(at: i)
+                                    break
+                                }
                             }
-                        }
-                        
-                        cards.availableCards = cards.availableCards.filter(){
-                            $0.category != newCard.category
-                        }
-                        
-                        
-                        if !isDailyStarted {
-                            cards.dailyChallengeCards = cards.dailyChallengeCards.filter(){
+                            
+                            cards.availableCards = cards.availableCards.filter(){
                                 $0.category != newCard.category
                             }
-                        }
+                            
+                            
+                            if !cards.isDailyStarted {
+                                cards.dailyChallengeCards = cards.dailyChallengeCards.filter(){
+                                    $0.category != newCard.category
+                                }
+                            }
+                            wellness.save()
+                            cards.save()
                         }
                         else{
                             

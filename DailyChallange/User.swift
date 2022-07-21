@@ -42,6 +42,15 @@ class User: Identifiable, Codable{
         utente = User()
     }
         
+        func fetch(){
+            if let data = UserDefaults.standard.data(forKey: "SavedData"){
+                if let decoded = try? JSONDecoder().decode(User.self, from: data){
+                    utente = decoded
+                    return
+                }
+            }
+            utente = User()
+        }
         
         func save(){
             if let encoded = try? JSONEncoder().encode(utente){
@@ -52,6 +61,7 @@ class User: Identifiable, Codable{
         func remove(){
             if let encoded = try? JSONEncoder().encode(utente){
                 UserDefaults.standard.removeObject(forKey: "SavedData")
+                utente = User()
             }
         }
     }

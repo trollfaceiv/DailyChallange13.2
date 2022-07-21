@@ -20,7 +20,6 @@
 		09B307BE2888032700976C40 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B307BD2888032700976C40 /* HealthKit.framework */; };
 		09B307C42888050700976C40 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B307C32888050700976C40 /* Step.swift */; };
 		09B307C62888055B00976C40 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B307C52888055B00976C40 /* HealthStore.swift */; };
-		09B307CA28885A7600976C40 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B307C928885A7600976C40 /* SettingsView.swift */; };
 		09C0C62B288699990054F23D /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C0C628288699330054F23D /* Charts.framework */; platformFilter = ios; };
 		09C0C62C288699990054F23D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09C0C628288699330054F23D /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		09C0C62E2886C5250054F23D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0C62D2886C5240054F23D /* User.swift */; };
@@ -113,7 +112,6 @@
 		09B307C32888050700976C40 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Step.swift; path = ../../../Step.swift; sourceTree = "<group>"; };
 		09B307C52888055B00976C40 /* HealthStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthStore.swift; path = ../../HealthStore.swift; sourceTree = "<group>"; };
 		09B307C7288807B500976C40 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09B307C928885A7600976C40 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		09C0C622288699330054F23D /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../Charts-master-4 2/Charts.xcodeproj"; sourceTree = "<group>"; };
 		09C0C62D2886C5240054F23D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09CA2A6B2882D52A0074A9B5 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 				09ABF4662885F85F00462F9E /* Utility.swift */,
 				09ABF4682885FC7000462F9E /* DataManager.swift */,
 				09C0C62D2886C5240054F23D /* User.swift */,
-				09B307C928885A7600976C40 /* SettingsView.swift */,
 			);
 			path = DailyChallange;
 			sourceTree = "<group>";
@@ -450,7 +447,6 @@
 				09ABF4692885FC7000462F9E /* DataManager.swift in Sources */,
 				F38DD4F72881BC9500289C43 /* TabCurve.swift in Sources */,
 				09B307C62888055B00976C40 /* HealthStore.swift in Sources */,
-				09B307CA28885A7600976C40 /* SettingsView.swift in Sources */,
 				F33BD1712881682F00BD207E /* CustomTabBar.swift in Sources */,
 				F32F29D528807D040036128F /* CardView.swift in Sources */,
 				09ABF4672885F85F00462F9E /* Utility.swift in Sources */,

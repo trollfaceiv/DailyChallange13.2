@@ -16,7 +16,7 @@ struct LoginView: View {
     @State private var wrongPassword = 0
     @State private var showingProfileScreen = false
     @State private var iconColor : Color = Color(.systemBlue)
-    @State private var wellness = User.Wellness()
+    @StateObject public var wellness :User.Wellness
     var body: some View {
         NavigationView{
             ZStack{
@@ -51,7 +51,7 @@ struct LoginView: View {
                     }
                     
                     NavigationLink(
-                        destination: ProfileView(), isActive: $showingProfileScreen){
+                        destination: ProfileView(wellness:wellness)                        .navigationBarHidden(true), isActive: $showingProfileScreen){
                             EmptyView()
                         }
                     Spacer().frame(width: 400, height: 350)
@@ -136,6 +136,6 @@ struct CustomTextField : View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(wellness: User.Wellness())
     }
 }
